@@ -1,5 +1,6 @@
 body{
     margin: 0px;
+    font-family: 'Open Sans';
 }
 
 nav {
@@ -14,17 +15,21 @@ nav , a {
     text-decoration:none;
 }
 
+h1, ul{
+    font-family: 'Mulish';    
+}
+
 ul {
     list-style: none;
     display: flex;
     gap: 48px;
     margin: 0;
     padding: 0;
-
+    
 }
 
 .page{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 1000px;
     margin: 65px auto 0;
 }
