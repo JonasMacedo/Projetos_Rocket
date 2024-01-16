@@ -2,13 +2,19 @@ body{
     margin: 0px;
 }
 
-header {
+nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
     margin-bottom: 55px;
 }
 
-ul{
+nav , a {
+    text-decoration:none;
+}
+
+ul {
     list-style: none;
     display: flex;
     gap: 48px;
