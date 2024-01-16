@@ -19,6 +19,10 @@ h1, ul{
     font-family: 'Mulish';    
 }
 
+ul li a:hover{
+    font-weight: bold;
+}
+
 ul {
     list-style: none;
     display: flex;
