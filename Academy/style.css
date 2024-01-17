@@ -16,11 +16,12 @@ nav , a {
 }
 
 h1, ul{
-    font-family: 'Mulish';    
+    font-family: 'Mulish';        
 }
 
 ul li a:hover{
     font-weight: bold;
+    color: #1F1534;
 }
 
 ul {
@@ -28,12 +29,46 @@ ul {
     display: flex;
     gap: 48px;
     margin: 0;
-    padding: 0;
-    
+    padding: 0;    
 }
 
 .page{
     /* border: 1px solid red; */
     width: 1000px;
     margin: 65px auto 0;
+}
+
+h1{ 
+    font-size: 49px;
+    line-height: 56px;
+    color: #000; 
+
+    font-weight: normal;
+    width: 490px;
+
+}
+
+h1 span{
+    color: #89c5cc;
+    font-weight: bold;
+}
+
+p{
+    font-size: 14px; 
+    line-height: 28px;
+    color: #7d7987;
+}
+
+button{
+    text-transform: uppercase;
+    font-family: 'Open Sans';
+}
+
+footer{
+    font-size: 14px;
+    line-height:28px;
+}
+
+footer a {
+    font-weight: bold;
 }
