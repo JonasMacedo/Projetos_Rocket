@@ -65,6 +65,17 @@ section p{
 button{
     text-transform: uppercase;
     font-family: 'Open Sans';
+    background: #69b99d;
+    
+    border-radius: 4px;
+    border: 0;
+    padding: 14px 32px 15px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
 }
 
 footer{
@@ -84,3 +95,4 @@ main{
     align-items: center;
     justify-content: space-between;
 }
+
