@@ -78,6 +78,11 @@ button{
 
 }
 
+button:hover {
+    cursor: pointer;
+    font-weight: bold;
+}
+
 footer{
     font-size: 14px;
     line-height:28px;
