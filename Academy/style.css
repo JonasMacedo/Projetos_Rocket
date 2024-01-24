@@ -22,9 +22,14 @@ h1, ul{
     font-family: 'Mulish';        
 }
 
+ul li a {
+    opacity: 0.5;
+}
+
 ul li a:hover{
     font-weight: bold;
     color: #1F1534;
+    opacity: 1;
 }
 
 ul {
