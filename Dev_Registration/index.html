@@ -3,11 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
     <title>Cadastro de Devs</title>
 </head>
 <body>
+    
     <header></header>
-    <main></main>
+    
+    <main>
+        <div>
+            <h1 id="titulo">Cadastro de DEVs</h1>
+            <p id="subtitulo">Complete com suas informações</p>
+        </div>
+        
+        <form class="formulario">
+            
+            <div class="personal">
+
+                <div class="campo">
+                    <label for="nome"><strong>Nome</strong></label>
+                    <input type="text">
+                </div>
+                
+                <div class="campo">
+                    <label for="sobrenome"><strong>Sobrenome</strong></label>
+                    <input type="text">
+                </div>
+                
+                <div class="campo">
+                    <label for="email"><strong>Email</strong></label>
+                    <input type="email">
+                </div>   
+            </div>
+                
+            <div class="ativit">
+                <label><strong>Qual lado da aplicação você desenvolve?</strong></label>
+                
+                <label>
+                    <input type="radio" checked/> FrontEnd
+                </label>
+                
+                <label>
+                    <input type="radio"/> BackEnd
+                </label>
+                
+                <label>
+                    <input type="radio"/> FullStack
+                </label>
+                
+            </div>
+
+            <div class="nvl">
+                <label><strong>Defina seu nivel de programação</strong></label>
+                <select id="nivel">
+                    <option selected disabled>Selecione</option>
+                    <option>Desenvolvedor - Junior</option>
+                    <option>Desenvolvedor - Plenio</option>
+                    <option>Desenvolvedor - Senior</option>
+                </select>
+            </div>
+
+            <div class="techs">
+                <label>
+                    <strog>Selecione as Tecnologias que possui familiaridade:</strog>
+                </label>
+                
+                <br>
+                
+                <input type="checkbox"><label>HTML</label>
+                <input type="checkbox"><label>CSS</label>
+                <input type="checkbox"><label>JavaScript</label>
+                <input type="checkbox"><label>PHP</label>
+                <input type="checkbox"><label>C#</label>
+                <input type="checkbox"><label>Python</label>
+                <input type="checkbox"><label>Java</label>
+
+            </div>
+
+            <div class="describ">
+                <label><strong>Conte um pouco sobre você:</strong></label>
+                <br>
+                <textarea rows="6" placeholder="Estamos animados para conhece-lo(a)"></textarea>
+            </div>
+
+        </form>
+
+    </main>
+
     <footer></footer>
+
 </body>
 </html>
