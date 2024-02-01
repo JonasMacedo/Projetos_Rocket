@@ -58,6 +58,7 @@ input, select, textarea{
 }
 
 .nvl{
+    margin-top: 7px;
     display: grid;
     justify-content: start;
 }
