@@ -54,7 +54,7 @@ header p{
 
 form{
     margin-top: 38px;
-    
+
     border-radius: 8px;
     border: 1px solid rgb(194, 235, 14);   
     background: gray;
@@ -104,4 +104,7 @@ fieldset legend{
 
     border: 1px solid #e6e6f0;
     border-radius: 8px;
+
+    height: 56px;
+    padding: 0 12px;
 }
