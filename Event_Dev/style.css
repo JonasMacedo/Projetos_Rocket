@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body{
     font-family: 'Poppins';
@@ -37,6 +42,8 @@ header h1{
     color: white;
     line-height: 42px;
     font-size: 36px;
+    
+    margin-bottom: 24px;
 }
 
 header p{
@@ -46,6 +53,8 @@ header p{
 }
 
 form{
+    margin-top: 38px;
+    
     border-radius: 8px;
     border: 1px solid rgb(194, 235, 14);   
     background: gray;
