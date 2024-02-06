@@ -30,24 +30,26 @@
         <main>
             <form action="">
 
-                <fieldset class="event" >
-                    <legend>Informações do Evento</legend>
-                    
+                <fieldset>
+                    <div class="event" >
+                        <legend>Informações do Evento</legend>
+                        
                         <div class="info">
-                            <label for="">Titulo do evento<span>(Minimo 8 caracteres)</span></label>
-                            <input type="text"/>
+                            <label for="event_title">Titulo do evento<span>(Minimo 8 caracteres)</span></label>
+                            <input type="text" id="event_title"/>
                         </div>
                         
                         <div class="info">
-                            <label for="">Link do evento<span>(comece com https://)</span></label>
-                            <input type="text"/>
+                            <label for="event_link">Link do evento<span>(comece com https://)</span></label>
+                            <input type="text" id="event_link"/>
                         </div>
                         
                         <div class="info">
-                            <label for="">WhatsApp para contato<span>(somente numeros)</span></label>
-                            <input type="text"/>
+                            <label for="event_contat">WhatsApp para contato<span>(somente numeros)</span></label>
+                            <input type="text" id="event_contat"/>
                         </div>
-                    
+                        
+                    </div>
                 </fieldset>
 
             </form>
