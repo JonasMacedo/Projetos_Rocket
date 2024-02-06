@@ -90,3 +90,13 @@ const perguntas = [
       correta: 2
     },
   ];
+
+const template = document.querySelector('template') //selecionando o item no html.
+const divQuiz = document.querySelector('#quiz') //Div para adicionar elemento clonado.
+
+for (let item of perguntas) {
+    const quizItem = template.content.cloneNode(true) //clonando elemento html.
+    
+    quizItem.querySelector('h3').textContent = item.pergunta;
+    divQuiz.appendChild(quizItem)
+  }
