@@ -78,6 +78,12 @@ fieldset legend{
     padding: 16px;
 }
 
+.event{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
 .info{
     display: flex;
     flex-direction: column;
@@ -107,4 +113,7 @@ fieldset legend{
 
     height: 56px;
     padding: 0 12px;
+
+    font-size: 16px;
+    line-height: 26px;
 }
