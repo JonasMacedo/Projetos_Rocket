@@ -94,18 +94,23 @@ const perguntas = [
 const template = document.querySelector('template') //selecionando o item no html.
 const divQuiz = document.querySelector('#quiz') //Div para adicionar elemento clonado.
 
-for (let item of perguntas) {
+  for (let item of perguntas) {
+
     const quizItem = template.content.cloneNode(true) //clonando elemento html.
     quizItem.querySelector('h3').textContent = item.pergunta; //modificando o H3.
-    
+
     for(let resposta of item.respostas){
-        const dt = quizItem.querySelector('dl dt').cloneNode(true); // clonano apenas o conteudo DT.
-        dt.querySelector('span').textContent = resposta; //editando o conteudo.
-        
-        quizItem.querySelector('dl').appendChild(dt); // adicionando novos DTs.
+      const dt = quizItem.querySelector('dl dt').cloneNode(true); // clonando apenas o conteudo DT.
+      dt.querySelector('span').textContent = resposta; //editando o conteudo.
+      
+      dt.querySelector('input').setAttribute('name','item-'+perguntas.indexOf(item));// ajustando para nao perder o radio.
+      dt.querySelector('input').value = item.respostas.indexOf(resposta);
+
+      quizItem.querySelector('dl').appendChild(dt); // adicionando novos DTs.
+      
     }
 
     quizItem.querySelector('dl dt').remove();
-    
+
     divQuiz.appendChild(quizItem) // apresentando na tela.
-}
+  }
