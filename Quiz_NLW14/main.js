@@ -94,7 +94,11 @@ const perguntas = [
 const template = document.querySelector('template') // selecionando o item no html.
 const divQuiz = document.querySelector('#quiz') //Div para adicionar elemento clonado.
 
-const corretas = new Set()
+const corretas = new Set() // Para poder adicionar metodos.
+
+const totalDePerguntas = perguntas.length 
+const mostrarTotal = document.querySelector('#acertos span')
+mostrarTotal.textContent = corretas.size + ' de ' + totalDePerguntas
 
   for (let item of perguntas) {
 
@@ -120,7 +124,9 @@ const corretas = new Set()
           alert('acertou!')
           corretas.add(item)          
         }
-        alert(corretas.size)
+
+        // alert(corretas.size)
+        mostrarTotal.textContent = corretas.size + ' de ' + totalDePerguntas
 
       }
 
