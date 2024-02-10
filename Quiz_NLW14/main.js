@@ -94,6 +94,8 @@ const perguntas = [
 const template = document.querySelector('template') // selecionando o item no html.
 const divQuiz = document.querySelector('#quiz') //Div para adicionar elemento clonado.
 
+const corretas = new Set()
+
   for (let item of perguntas) {
 
     const quizItem = template.content.cloneNode(true) // clonando elemento html.
@@ -113,10 +115,12 @@ const divQuiz = document.querySelector('#quiz') //Div para adicionar elemento cl
         const estaCorreto = event.target.value == item.correta; // esta comparando uma STRING com Numeber.
         // alert('Valor indice: '+event.target.value+' Esta correto: '+estaCorreto)
         
+        corretas.delete(item)
         if (estaCorreto) {// verificando a resposta.
           alert('acertou!')
-          
+          corretas.add(item)          
         }
+        alert(corretas.size)
 
       }
 
