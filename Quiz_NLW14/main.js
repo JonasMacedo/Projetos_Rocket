@@ -110,7 +110,13 @@ const divQuiz = document.querySelector('#quiz') //Div para adicionar elemento cl
         
         // alert('Valor do indice: '+event.target.value)
         
-       
+        const estaCorreto = event.target.value == item.correta; // esta comparando uma STRING com Numeber.
+        // alert('Valor indice: '+event.target.value+' Esta correto: '+estaCorreto)
+        
+        if (estaCorreto) {// verificando a resposta.
+          alert('acertou!')
+          
+        }
 
       }
 
