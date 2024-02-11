@@ -35,15 +35,44 @@ header h1{
     color: #f1f5f9;
 }
 
+#quiz{
+    counter-reset: quiz-item;
+}
+
 .quiz_item{
     margin-top: 24px;
     border: 1px solid #475569;
     border-radius: 6px;
+
+    overflow: hidden; /* esconde oq que transborde a caixa */
 }
 
 .quiz_item h3{
     padding: 16px 20px;
     color: #e2e8f0;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    background-color: #1e293b;
+}
+
+.quiz_item h3::before{
+    counter-increment: quiz-item;
+    content: counter(quiz-item);
+
+    background-color: #475569;
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+    border-radius: 50%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;/* evitar que o elemento seja achatado */
 }
 
 .quiz_item dl{
@@ -77,6 +106,8 @@ input{
     display: flex;
     align-items: center;
     justify-content: center;
+
+    flex-shrink: 0;/* evitar que o elemento seja achatado */
 }
 
 input:checked{
