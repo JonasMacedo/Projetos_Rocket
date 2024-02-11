@@ -29,3 +29,25 @@ header h1{
     font-size: 30px;
 }
 
+.quiz_item{
+    margin-top: 24px;
+    border: 1px solid #475569;
+    border-radius: 6px;
+}
+
+.quiz_item h3{
+    padding: 16px 20px;
+}
+
+.quiz_item dl{
+    display: grid;
+    gap: 8px;
+
+    padding: 20px 24px;
+}
+
+.quiz_item dl dt{
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0;
+}
