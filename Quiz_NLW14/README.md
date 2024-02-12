@@ -15,4 +15,12 @@
     <td>2.43</td>
   </tr>
 </table>
-Atenção o codigo esta comentando e possui "Alerts" para melhor comprenção.⚠️
+<div>
+  Atenção o codigo esta comentando e possui "Alerts" para melhor comprenção.⚠️  
+  <br><br>
+</div>
+
+> Projeto de Quiz:
+<div align='center'>
+  <img src='https://github.com/JonasMacedo/Projetos_Rocket/assets/26288980/11b139a7-82bb-43a4-978b-e2d6a74a458f' width:'700px' />
+</div>
