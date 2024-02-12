@@ -91,13 +91,19 @@ const perguntas = [
     },
   ];
 
-const template = document.querySelector('template') //selecionando o item no html.
+const template = document.querySelector('template') // selecionando o item no html.
 const divQuiz = document.querySelector('#quiz') //Div para adicionar elemento clonado.
+
+const corretas = new Set() // Para poder adicionar metodos.
+
+const totalDePerguntas = perguntas.length 
+const mostrarTotal = document.querySelector('#acertos span')
+mostrarTotal.textContent = corretas.size + ' de ' + totalDePerguntas
 
   for (let item of perguntas) {
 
-    const quizItem = template.content.cloneNode(true) //clonando elemento html.
-    quizItem.querySelector('h3').textContent = item.pergunta; //modificando o H3.
+    const quizItem = template.content.cloneNode(true) // clonando elemento html.
+    quizItem.querySelector('h3').textContent = item.pergunta; // modificando o H3.
 
     for(let resposta of item.respostas){
       const dt = quizItem.querySelector('dl dt').cloneNode(true); // clonando apenas o conteudo DT.
@@ -105,6 +111,24 @@ const divQuiz = document.querySelector('#quiz') //Div para adicionar elemento cl
       
       dt.querySelector('input').setAttribute('name','item-'+perguntas.indexOf(item));// ajustando para nao perder o radio.
       dt.querySelector('input').value = item.respostas.indexOf(resposta); // adicionando valor as respostas.
+
+      dt.querySelector('input').onchange = (event) => { // monitorando os clicks nos inputs.
+        
+        // alert('Valor do indice: '+event.target.value)
+        
+        const estaCorreto = event.target.value == item.correta; // esta comparando uma STRING com Numeber.
+        // alert('Valor indice: '+event.target.value+' Esta correto: '+estaCorreto)
+        
+        corretas.delete(item)
+        if (estaCorreto) {// verificando a resposta.
+          alert('acertou!')
+          corretas.add(item)          
+        }
+
+        // alert(corretas.size)
+        mostrarTotal.textContent = corretas.size + ' de ' + totalDePerguntas
+
+      }
 
       quizItem.querySelector('dl').appendChild(dt); // adicionando novos DTs.
       
