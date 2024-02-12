@@ -123,3 +123,15 @@ input:checked:before{
     background-color: #a3e635;
     border-radius: 50%;
 }
+
+#acertos{
+    text-align: center;
+    background-color: #a3e635;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    padding: 12px;
+}
