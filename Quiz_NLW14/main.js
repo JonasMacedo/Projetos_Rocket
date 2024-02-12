@@ -104,7 +104,7 @@ const divQuiz = document.querySelector('#quiz') //Div para adicionar elemento cl
       dt.querySelector('span').textContent = resposta; //editando o conteudo.
       
       dt.querySelector('input').setAttribute('name','item-'+perguntas.indexOf(item));// ajustando para nao perder o radio.
-      dt.querySelector('input').value = item.respostas.indexOf(resposta);
+      dt.querySelector('input').value = item.respostas.indexOf(resposta); // adicionando valor as respostas.
 
       quizItem.querySelector('dl').appendChild(dt); // adicionando novos DTs.
       
