@@ -123,3 +123,7 @@ fieldset legend{
     height: 168px;
 }
 
+.info select{
+    appearance: none;
+    -webkit-appearance: none; /* para navegadores que nao estejam atualizados */
+}
