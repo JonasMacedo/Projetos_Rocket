@@ -122,7 +122,7 @@ function App() {
 
         </Table>
 
-        {/* <Pagination /> */}
+        { tagsResponse && <Pagination pages={tagsResponse.pages} items={tagsResponse.items} page={1} />}
 
       </main>
 
