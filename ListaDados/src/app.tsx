@@ -1,11 +1,12 @@
-import {Plus, Search, FileDown, MoreHorizontal } from 'lucide-react'
 import {Header} from '../components/header'
 import {Tabs} from '../components/tabs'
+import {Pagination} from '../components/pagination'
+
+import {Plus, Search, FileDown, MoreHorizontal } from 'lucide-react'
 
 import {Button} from '../components/ui/button'
 import {Input, Control} from '../components/ui/input'
 import {Table, TableHeader, TableRow, TableHead, TableBody, TableCell} from '../components/ui/table'
-import {Pagination} from '../components/pagination'
 
 function App() {
   return (
