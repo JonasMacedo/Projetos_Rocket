@@ -5,6 +5,7 @@ import {Tabs} from '../components/tabs'
 import {Button} from '../components/ui/button'
 import {Input, Control} from '../components/ui/input'
 import {Table, TableHeader, TableRow, TableHead, TableBody, TableCell} from '../components/ui/table'
+import {Pagination} from '../components/pagination'
 
 function App() {
   return (
@@ -82,6 +83,8 @@ function App() {
           </TableBody>
 
         </Table>
+
+        {/* <Pagination /> */}
 
       </main>
 
