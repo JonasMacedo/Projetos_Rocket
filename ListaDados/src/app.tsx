@@ -1,4 +1,6 @@
 import {Plus} from 'lucide-react'
+import {Header} from '../components/header'
+import {Tabs} from '../components/tabs'
 
 function App() {
   return (
@@ -6,8 +8,8 @@ function App() {
 
       <div>
         <h1>Ola!</h1>
-        <p>Header</p>
-        <p>Tabs</p>
+        <Header />
+        <Tabs />
 
       </div>    
 
