@@ -53,26 +53,32 @@ function App() {
           </TableHeader>
           
           <TableBody>
-            <TableRow>
-              <TableCell></TableCell>
-              <TableCell>
-                <div className='flex flex-col gap-0.5'>
-                  <span className='font-medium text-zinc-300'>React</span>
-                  <span className='font-medium text-zinc-300'>ID: 51220644071107000104650010000202181816407766</span>
-                </div>
-              </TableCell>
+            {Array.from({length:10}).map((value,index)=>{
+              return(
+                <TableRow key={index}>
+                  <TableCell></TableCell>
+                  <TableCell>
+                    <div className='flex flex-col gap-0.5'>
+                      <span className='font-medium text-zinc-300'>React</span>
+                      <span className='font-medium text-zinc-300'>ID: 51220644071107000104650010000202181816407766</span>
+                    </div>
+                  </TableCell>
+                  
+                  <TableCell>
+                    13 video(s)
+                  </TableCell>
+                  
+                  <TableCell className='text-right'>
+                    <Button size='icon'>
+                      <MoreHorizontal className='size-4'/>
+                    </Button>  
+                  </TableCell>
+                  
+                </TableRow>
               
-              <TableCell>
-                13 video(s)
-              </TableCell>
-              
-              <TableCell className='text-right'>
-                <Button size='icon'>
-                  <MoreHorizontal className='size-4'/>
-                </Button>  
-              </TableCell>
-              
-            </TableRow>
+              )
+            })}
+
           </TableBody>
 
         </Table>
