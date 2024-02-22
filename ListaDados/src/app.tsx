@@ -7,7 +7,7 @@ import {Plus, Search, FileDown, MoreHorizontal } from 'lucide-react'
 import {Button} from '../components/ui/button'
 import {Input, Control} from '../components/ui/input'
 import {Table, TableHeader, TableRow, TableHead, TableBody, TableCell} from '../components/ui/table'
-import { useQuery } from '@tanstack/react-query'
+import { keepPreviousData, useQuery } from '@tanstack/react-query'
 import { useSearchParams } from 'react-router-dom'
 
 export interface TagResponse {
@@ -45,6 +45,7 @@ function App() {
       return data
 
     },
+    placeholderData: keepPreviousData //Suavisa carregamento de informacao.
   })
 
   if(isLoading){
