@@ -8,6 +8,7 @@ import {Button} from '../components/ui/button'
 import {Input, Control} from '../components/ui/input'
 import {Table, TableHeader, TableRow, TableHead, TableBody, TableCell} from '../components/ui/table'
 import { useQuery } from '@tanstack/react-query'
+import { useSearchParams } from 'react-router-dom'
 
 export interface TagResponse {
   // usado o site transform.toos para gerar o typescript
@@ -28,6 +29,10 @@ export interface Tag {
 }
 
 function App() {
+
+  const [serachParams] = useSearchParams()
+
+  const page = serachParams.get('page') ? Number(serachParams.get('page')) : 1 
 
   const {data: tagsResponse, isLoading} = useQuery<TagResponse>({
     queryKey: ['get-tags'],
@@ -50,7 +55,6 @@ function App() {
     <div className="py-10 space-y-8">
 
       <div>
-        <h1>Ola!</h1>
         {/* <Header />  ajustar nas imagens */}
         {/* <Tabs /> ajustar espacamentos */}
 
@@ -122,7 +126,7 @@ function App() {
 
         </Table>
 
-        { tagsResponse && <Pagination pages={tagsResponse.pages} items={tagsResponse.items} page={1} />}
+        { tagsResponse && <Pagination pages={tagsResponse.pages} items={tagsResponse.items} page={page} />}
 
       </main>
 
