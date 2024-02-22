@@ -9,7 +9,8 @@ import {Input, Control} from '../components/ui/input'
 import {Table, TableHeader, TableRow, TableHead, TableBody, TableCell} from '../components/ui/table'
 import { keepPreviousData, useQuery } from '@tanstack/react-query'
 import { useSearchParams } from 'react-router-dom'
-
+import { useState } from 'react'
+  
 export interface TagResponse {
   // usado o site transform.toos para gerar o typescript
   first: number
@@ -31,6 +32,7 @@ export interface Tag {
 function App() {
 
   const [serachParams] = useSearchParams()
+  const [filter, setFilter] = useState('')
 
   const page = serachParams.get('page') ? Number(serachParams.get('page')) : 1 
 
@@ -42,10 +44,15 @@ function App() {
 
       console.log(data)
 
+      // Delay 1.5 segundos ao avançar pagina, primeira vez.
+      await new Promise(resolve => setTimeout(resolve, 1500))
+
       return data
 
     },
+   
     placeholderData: keepPreviousData //Suavisa carregamento de informacao.
+
   })
 
   if(isLoading){
@@ -77,7 +84,7 @@ function App() {
           
           <Input variant='filter'>           
             <Search className='size-3'/>
-            <Control placeholder='Search Tags...'/>              
+            <Control placeholder='Search Tags...' onChange={ e => setFilter(e.target.value)} value={filter}/>              
           </Input>           
           
           <Button>
