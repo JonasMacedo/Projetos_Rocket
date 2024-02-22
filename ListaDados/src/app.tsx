@@ -35,9 +35,9 @@ function App() {
   const page = serachParams.get('page') ? Number(serachParams.get('page')) : 1 
 
   const {data: tagsResponse, isLoading} = useQuery<TagResponse>({
-    queryKey: ['get-tags'],
+    queryKey: ['get-tags',page],
     queryFn: async ()=>{
-      const response = await fetch('http://localhost:3333/tags?_page=1&_per_page=10')
+      const response = await fetch(`http://localhost:3333/tags?_page=${page}&_per_page=10`)
       const data = await response.json() // Converte em JSON.
 
       console.log(data)
