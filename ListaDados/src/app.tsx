@@ -9,8 +9,10 @@ import {Input, Control} from '../components/ui/input'
 import {Table, TableHeader, TableRow, TableHead, TableBody, TableCell} from '../components/ui/table'
 import { keepPreviousData, useQuery } from '@tanstack/react-query'
 import { useSearchParams } from 'react-router-dom'
-import { useState } from 'react'
-  
+import { useEffect, useState } from 'react'
+
+import useDebounceValue from './hooks/debouceValue'
+
 export interface TagResponse {
   // usado o site transform.toos para gerar o typescript
   first: number
@@ -31,13 +33,23 @@ export interface Tag {
 
 function App() {
 
-  const [serachParams] = useSearchParams()
+  const [serachParams,setSearchParams] = useSearchParams()
   const [filter, setFilter] = useState('')
+
+  const deboucedFilter = useDebounceValue(filter, 1500)
 
   const page = serachParams.get('page') ? Number(serachParams.get('page')) : 1 
 
+  useEffect(()=>{
+    setSearchParams( params =>{
+      params.set('page','1')
+
+      return params
+    })
+  },[deboucedFilter,setSearchParams])
+
   const {data: tagsResponse, isLoading} = useQuery<TagResponse>({
-    queryKey: ['get-tags',page],
+    queryKey: ['get-tags', deboucedFilter , page],
     queryFn: async ()=>{
       const response = await fetch(`http://localhost:3333/tags?_page=${page}&_per_page=10`)
       const data = await response.json() // Converte em JSON.
@@ -45,7 +57,7 @@ function App() {
       console.log(data)
 
       // Delay 1.5 segundos ao avançar pagina, primeira vez.
-      await new Promise(resolve => setTimeout(resolve, 1500))
+      // await new Promise(resolve => setTimeout(resolve, 1500))
 
       return data
 
