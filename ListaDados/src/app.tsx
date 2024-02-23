@@ -2,7 +2,7 @@ import {Header} from '../components/header'
 import {Tabs} from '../components/tabs'
 import {Pagination} from '../components/pagination'
 
-import {Plus, Search, FileDown, MoreHorizontal } from 'lucide-react'
+import {Plus, Search,Filter, FileDown, MoreHorizontal } from 'lucide-react'
 
 import {Button} from '../components/ui/button'
 import {Input, Control} from '../components/ui/input'
@@ -10,8 +10,6 @@ import {Table, TableHeader, TableRow, TableHead, TableBody, TableCell} from '../
 import { keepPreviousData, useQuery } from '@tanstack/react-query'
 import { useSearchParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-
-import useDebounceValue from './hooks/debouceValue'
 
 export interface TagResponse {
   // usado o site transform.toos para gerar o typescript
@@ -33,25 +31,17 @@ export interface Tag {
 
 function App() {
 
-  const [serachParams,setSearchParams] = useSearchParams()
-  const [filter, setFilter] = useState('')
+  const [serachParams, setSearchParams] = useSearchParams()
+  const ulrFilter = serachParams.get('filter')  ?? ''
 
-  const deboucedFilter = useDebounceValue(filter, 1500)
-
+  const [filter, setFilter] = useState(ulrFilter)
+  
   const page = serachParams.get('page') ? Number(serachParams.get('page')) : 1 
-
-  useEffect(()=>{
-    setSearchParams( params =>{
-      params.set('page','1')
-
-      return params
-    })
-  },[deboucedFilter,setSearchParams])
-
+  
   const {data: tagsResponse, isLoading} = useQuery<TagResponse>({
-    queryKey: ['get-tags', deboucedFilter , page],
+    queryKey: ['get-tags', ulrFilter, page],
     queryFn: async ()=>{
-      const response = await fetch(`http://localhost:3333/tags?_page=${page}&_per_page=10`)
+      const response = await fetch(`http://localhost:3333/tags?_page=${page}&_per_page=10&title=${ulrFilter}`)
       const data = await response.json() // Converte em JSON.
 
       console.log(data)
@@ -66,6 +56,16 @@ function App() {
     placeholderData: keepPreviousData //Suavisa carregamento de informacao.
 
   })
+
+  function handleFilter() {
+    setSearchParams(params=>{
+      params.set('page','1')
+      params.set('filter', filter)
+
+      return params
+
+    })
+  }
 
   if(isLoading){
     return null
@@ -93,11 +93,19 @@ function App() {
         </div>
 
         <div className='flex items-center justify-between'>
-          
-          <Input variant='filter'>           
-            <Search className='size-3'/>
-            <Control placeholder='Search Tags...' onChange={ e => setFilter(e.target.value)} value={filter}/>              
-          </Input>           
+          <div className='flex items-center'>
+            <Input variant='filter'>           
+              <Search className='size-3'/>
+              <Control placeholder='Search Tags...' 
+              onChange={ e => setFilter(e.target.value)} 
+              value={filter}/>              
+            </Input>           
+            
+            <Button type='submit' onClick={handleFilter}>
+              <Filter className='size-3'/> Filter
+            </Button>
+
+          </div>
           
           <Button>
             <FileDown className='size-3'/>Export
