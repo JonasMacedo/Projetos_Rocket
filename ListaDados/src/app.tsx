@@ -11,6 +11,8 @@ import { keepPreviousData, useQuery } from '@tanstack/react-query'
 import { useSearchParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
+import * as Dialog from '@radix-ui/react-dialog';
+
 export interface TagResponse {
   // usado o site transform.toos para gerar o typescript
   first: number
@@ -84,12 +86,35 @@ function App() {
         
         <div className='flex gap-3 items-center'>
           <h1 className="text-xl font-bold">Tags</h1>
-          <button className='inline-flex items-center gap-1.5 text-xs bg-teal-300 text-teal-950 font-medium rounded-full px-2 py-1'>
-            <Button>
-              <Plus className='size-3'/>        
-              Create new
-            </Button>           
-          </button>
+          {/* <button className='inline-flex items-center gap-1.5 text-xs bg-teal-300 text-teal-950 font-medium rounded-full px-2 py-1'> */}
+            <Dialog.Root>
+              <Dialog.Trigger asChild>
+                <Button variant='primary'>
+                  <Plus className='size-3'/>        
+                  Create new
+                </Button>         
+              </Dialog.Trigger>
+
+              <Dialog.Portal>
+                <Dialog.Overlay className='fixed inset-8 bg-black/78' />
+                <Dialog.Content className='fixed p-10 right-0 top-0 bottom-0 h-screen min-w-[320px] z-10 bg-zinc-900 border-l border-zinc-50'>
+
+                  <div className='space-y-3'>
+                    <Dialog.Title className='text-xl font-bold'>
+                      Create a new tag!
+                    </Dialog.Title>
+                    <Dialog.Description className='text-sm text-zinc-500'>
+                      Tags can be used to group videos about similar concepts 
+                    </Dialog.Description>
+                  </div>
+                
+                  <Dialog.Close />
+                </Dialog.Content>
+              </Dialog.Portal>
+              
+
+            </Dialog.Root>
+          {/* </button> */}
         </div>
 
         <div className='flex items-center justify-between'>
