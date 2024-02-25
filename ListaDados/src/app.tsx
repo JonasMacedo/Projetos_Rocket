@@ -12,6 +12,8 @@ import { useSearchParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 import * as Dialog from '@radix-ui/react-dialog';
+import  '../components/create_tag_form'
+import CreateTagForm from '../components/create_tag_form'
 
 export interface TagResponse {
   // usado o site transform.toos para gerar o typescript
@@ -108,7 +110,7 @@ function App() {
                     </Dialog.Description>
                   </div>
                 
-                  <Dialog.Close />
+                  <CreateTagForm/>
                 </Dialog.Content>
               </Dialog.Portal>
               
