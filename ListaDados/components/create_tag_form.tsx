@@ -1,16 +1,39 @@
 import {Check, X} from "lucide-react"
 
+import {useForm} from 'react-hook-form'
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
 import { Button } from "./ui/button"
 
+const creatTagSchema = z.object({
+    // Funcao para tratar os dados recebidos do form.
+    name: z.string().min(3,{message:'Minimo de 3 carateres'}),
+    slug: z.string(),
+})
+
+// Inferencia: criando uma tipagem apartir de uma variavel existente.
+type CreateTagSchema = z.infer<typeof creatTagSchema>
+
 export default function CreateTagForm(){
+
+    const {register, handleSubmit} = useForm<CreateTagSchema>({
+        resolver: zodResolver(creatTagSchema),
+    })
+
+    function createTag(data: CreateTagSchema) {
+        console.log(data)
+    }
+
     return(
-        <form className="w-full space-y-6 ">
+        <form onSubmit={handleSubmit(createTag)} className="w-full space-y-6 ">
             
             <div className="space-y-2" >
                 <label className="block text-sm font-medium " htmlFor="name">Tag name </label>
                 <input 
                     className="border border-zinc-800 rounded-lg px-3 py-2 bg-zinc-800/50 w-full"
                     id="name"
+                    {...register('name')}
                     type="text" />
             </div>
             
@@ -19,6 +42,7 @@ export default function CreateTagForm(){
                 <input 
                     className="border border-zinc-800 rounded-lg px-3 py-2 bg-zinc-800/50 w-full"
                     id="id" 
+                    {...register('slug')}
                     type="text" 
                     readOnly />
             </div>
