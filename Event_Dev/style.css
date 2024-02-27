@@ -136,3 +136,14 @@ fieldset legend{
     background-repeat: no-repeat;
     background-position: right 24px top 50%;
 }
+
+.col3{
+    display: flex;
+    gap: 20px;
+}
+
+.col3 > div:nth-child(1){
+    /* > DIV seta ira pegar apenas as primeiras divs  */
+    /* > nth-child(X) passando a instrucao de profundidade qual filho sera aplicado o efeito. */
+    width: 100%;
+}
