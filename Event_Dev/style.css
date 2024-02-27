@@ -60,6 +60,10 @@ form{
     background: gray;
     /* background:  #fafafc; */
     padding: 64px;
+
+    display:flex;
+    flex-direction: column;
+    gap: 48px;
 }
 
 form fieldset{
