@@ -93,7 +93,8 @@ fieldset legend{
     flex-direction: column;
 }
 
-.info label{
+.info label, 
+.checbox-info label {
     font-size: 14px;
     line-height: 24px;
     
@@ -146,4 +147,25 @@ fieldset legend{
     /* > DIV seta ira pegar apenas as primeiras divs  */
     /* > nth-child(X) passando a instrucao de profundidade qual filho sera aplicado o efeito. */
     width: 100%;
+}
+
+.checbox-info label {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    
+    margin: 0;
+}
+
+.checbox-info input{
+    display: none;
+}
+
+.checbox-info label::before{
+    content: " ";
+    width: 24px;    
+    height: 24px;
+    border: 1px solid #e6e6f0;
+    border-radius: 8px;
+
 }
