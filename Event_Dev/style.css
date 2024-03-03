@@ -54,10 +54,9 @@ header p{
 
 form{
     margin-top: 38px;
-
-    border-radius: 8px;
-    border: 1px solid rgb(194, 235, 14);   
     background: gray;
+    border-radius: 8px 8px 0 0;
+    
     /* background:  #fafafc; */
     padding: 64px;
 
@@ -195,8 +194,24 @@ footer{
     padding: 40px 64px;
 
     margin-bottom: 100px;
+    
+    border-top: 1px solid #d6d6d6;
+    border-radius: 0 0 8px;
 }
 
 footer .footer-button{
     height: 56px;
+    background: #04d361;
+    border-radius: 8px;
+    border: 0;
+
+    font-family: 'Archivo';
+    font-weight: 600px;
+    font-size: 16px;
+    line-height: 26px;
+    color: #ffffff;
+}
+
+.footer-button:hover{
+    background: #08a04c;
 }
