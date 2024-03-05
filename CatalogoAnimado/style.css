@@ -22,3 +22,10 @@ body{
     gap: 5px;
     padding: 0.4rem;
 }
+
+.imagem img{
+    /* para que a imagem se ajuste ao .card e ocupe o espaco corretamente */
+    width: 100%;
+    height: 100%;
+}
+
