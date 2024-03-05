@@ -47,3 +47,10 @@ body{
 .card a:hover{
     flex:4;
 }
+
+.card a span{
+    min-width: 16em;
+    padding: 0.5rem;
+    transform: rotate(-90deg);    
+    transition: all 0.5s;
+}
