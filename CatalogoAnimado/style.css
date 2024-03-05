@@ -11,3 +11,14 @@ body{
     min-height: 100vh;
     background: black;
 }
+
+.card{
+    width: 412px;
+    height: 364px;
+    border-radius: 4px;
+    background: black; /* caso corrompa a imagem */
+    
+    display: flex;
+    gap: 5px;
+    padding: 0.4rem;
+}
