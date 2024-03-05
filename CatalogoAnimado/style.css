@@ -29,3 +29,17 @@ body{
     height: 100%;
 }
 
+.card a{
+    height: 100%;
+    flex: 1;
+
+    overflow: hidden;
+    border-radius: 2px;
+    transition: all .5s;
+
+    background: #212121;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
