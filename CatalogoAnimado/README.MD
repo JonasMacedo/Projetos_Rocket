@@ -20,4 +20,5 @@
 > COM o mause sobre o elemento
 <div align='center'>
     <img src='https://github.com/JonasMacedo/Projetos_Rocket/assets/26288980/5fbdaa61-81bd-474a-85f6-86bf8c5c2332' width:'700px'/>
+  <p>Elemento rotaciona e expande</p>
 </div>
