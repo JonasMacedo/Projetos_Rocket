@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+# Efeitos de Estilizacao:
+
+>Tecnologias Utilizadas:
+<table>
+  <tr>
+    <td>HTML</td>
+    <td>CSS</td>    
+  </tr>
+</table>
+<div>
+  Atenção o codigo esta comentando para melhor comprenção.⚠️  
+  <br><br>
+</div>
