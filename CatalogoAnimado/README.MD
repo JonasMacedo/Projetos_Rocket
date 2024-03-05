@@ -14,5 +14,5 @@
 
 > Sem o mause sobre o elemento
 <div align='center'>
-  
+    <img src='https://github.com/JonasMacedo/Projetos_Rocket/assets/26288980/fd40221d-e3e4-4984-ac2d-adab1eefa7fe' width:'700px' />
 </div>
