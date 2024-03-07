@@ -36,3 +36,9 @@ img{
 
     transition: all 0.6 cubic-bezier(0.175, 0.885 , 0.32, 1.275) ;
 }
+
+.card_imag{
+    width: 100%;
+    fill: #333;
+    transition: all 0.6 cubic-bezier(0.175, 0.885 , 0.32, 1.275);
+}
