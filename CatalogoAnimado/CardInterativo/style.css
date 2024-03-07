@@ -34,13 +34,13 @@ img{
     perspective: 1000px;
     box-shadow: 0 0 0 5px rgb(100, 1, 1);
 
-    transition: all 0.6 cubic-bezier(0.175, 0.885 , 0.32, 1.275) ;
+    transition: all 0.12s cubic-bezier(0.175, 0.885 , 0.32, 1.275);
 }
 
-.card_imag{
+.card_main .card_imag{
     width: 100%;
     fill: #333;
-    transition: all 0.6 cubic-bezier(0.175, 0.885 , 0.32, 1.275);
+    transition: all 1.01s cubic-bezier(0.175, 0.885 , 0.32, 1.275);
 }
 
 .card_main:hover{
@@ -61,11 +61,19 @@ img{
     background-color: #250001;
     
     transform: rotateX(-90deg);
-    transform-origin: buttom;
-    transition: all 0.6s cubic-bezier(0.175, 0.835, 0.32);
+    transform-origin: bottom;
+    transition: all 1.01s cubic-bezier(0.175, 0.835, 0.32, 1.275);
 
 }
 
 .card_main:hover .card__content{
     transform: rotateX(0deg);       
+}
+
+.card_title{
+    margin: 0;
+    font-size: 24px;
+    color: #f16331;
+    font-weight: 700px;
+    font-family: sans-serif;
 }
