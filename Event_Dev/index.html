@@ -36,7 +36,7 @@
                         
                         <div class="info">
                             <label for="event_title">Titulo do evento<span>(Minimo 8 caracteres)</span></label>
-                            <input type="text" id="event_title" required/>
+                            <input type="text" id="event_title" required minlength="8"/>
                         </div>
                         
                         <div class="info">
@@ -77,7 +77,12 @@
 
                         <div class="info">
                             <label for="event-password">Senha de acesso do participante</label>
-                            <input type="password" id="event-password"/>
+                            <input 
+                                type="password" 
+                                id="event-password"
+                                required
+                                minlength="6"
+                            />
                         </div>
                         
                         <div class="checbox-info">
@@ -96,7 +101,7 @@
 
                             <div class="info">
                                 <label for="event-data">Data</label>
-                                <input type="data" id="event-data"/>
+                                <input type="data" id="event-data" required/>
                             </div>
                             
                             <div class="info">
