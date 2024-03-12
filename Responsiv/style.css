@@ -10,18 +10,50 @@
 }
 
 body{
+    font-family: 'Epilogue', sans-serif;
     /* background: #ece9fd; */
     background: #9289c9;
     padding: 6.0rem 2.3rem 6.6rem;
 }
 
-
 h1{
-    font-family: 'Epilogue', sans-serif;
     font-size: 4.0rem;
+    font-weight: 800;
     line-height: 4.8rem;
+
+    color: #090039;
+
+    margin-bottom: 1.5rem;
 }
 
 ul{
     list-style: none;
+}
+
+main p:first-child{
+    color: #7158fe;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    line-height: 3.2rem;
+    
+    margin-bottom: 1.7rem;
+}
+
+h1 + p {
+    color: rgba(10, 0, 57, 0.64);
+    line-height: 3.2rem;
+}
+
+a {
+    color: #090039;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #3617e6;
+    font-weight: bold;
+}
+
+ul{
+    margin-top: 7.2rem;
 }
