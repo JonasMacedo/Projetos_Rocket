@@ -86,3 +86,32 @@ ul li{
     /* align-items: center; */
     gap: 3.8rem;
 }
+
+ul li+li {
+    margin-top: 3.2rem;
+}
+
+/* Midia quiries para deixar a tela mais responsiva */
+@media (min-width: 700px){
+    body{
+        padding: 8rem;
+    }
+    main{
+        max-width: 1020px;
+        display: flex;
+        
+        gap: 2rem;
+    }
+ 
+    main div{
+        max-width: 430px;
+    }
+
+    ul li{
+        gap: 5.3rem;
+        max-width: 410px;
+
+        align-items: center;
+    }
+    
+}
