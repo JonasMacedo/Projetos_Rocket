@@ -22,6 +22,7 @@ main{
     margin-inline: auto;
 
     padding: 5.6rem 4rem;
+    box-sizing: content-box;/* faz com que o que o padding nao seja somado no conteudo do box. */
 }
 
 h1, h2 {
@@ -29,6 +30,9 @@ h1, h2 {
     line-height: 1.8rem;
 }
 
+img{
+    width: 100%;
+}
 
 p, li, strong{
     font-size: 1.4rem;
