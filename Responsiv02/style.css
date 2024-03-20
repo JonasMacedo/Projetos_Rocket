@@ -69,3 +69,13 @@ button{
 
     margin-top: 3.2rem;
 }
+
+@media (min-width: 460px){
+    
+    main{
+       flex-direction: row;
+       max-width: 100%;
+    }
+    
+    
+}
