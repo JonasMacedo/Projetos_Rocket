@@ -12,7 +12,6 @@ body{
 main{
     display: grid;
     place-content: center;
-    
     grid-template-columns: repeat(3, 370px);
 
     gap: 48px 60px;
@@ -24,4 +23,21 @@ main{
     border: 2px solid #323238;
     border-radius: 8px;
 
+    overflow: hidden; /*Para ocultar a imagem que vazar do card. */
+}
+
+.card h2{
+    color: #c4c4cc;
+    font-size: 36px;
+    font-weight: 800px;
+    padding: 24px 32px 0;
+}
+
+.card p{
+    color: #c4c4cc;
+    font-size: 18px;
+    font-weight: 600px;
+    
+    padding: 24px 32px 32px;
+  
 }
