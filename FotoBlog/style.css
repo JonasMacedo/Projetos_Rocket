@@ -14,3 +14,16 @@
 body{
     font-size: 1.6rem;
 }
+
+.app > *{
+    /* apenas para visalizacao. */
+    border: 1px solid red; /* add bordas em todos os emementos da div */
+}
+
+.app{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: max-content 1fr max-content;
+}
+
+
