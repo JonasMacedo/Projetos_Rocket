@@ -11,11 +11,15 @@
     font-size: 62.5%;
 
     --color-base-white: #ffff;
-    --color-base-gray-100: #8b8b99;
-    --color-base-gray-300: #f5f5f5;
+    --color-base-gray-100: #f5f5f5;
+    --color-base-gray-300: #8b8b99;
+    --color-base-gray-500: #3d3d3d;
     --color-base-gray-900: #202024;
     
-    font-family: 'Mulish';
+}
+
+html,body, input{
+    font-family: 'Mulish';    
 }
 
 body{
@@ -65,6 +69,31 @@ nav ul{
 
 ul li.active{
     color: var(--color-base-gray-900);
+}
+
+.input_form label{
+    /* tornando o campo invisivel ao usario, mas visivel aos navegadores */
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.input_form input{
+    width: 100%;
+    padding: 1.6rem;
+
+    background-color: var(--color-base-gray-100);
+    border: 0;
+    border-radius: .6rem;
+
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.input_form input::placeholder{
+    opacity: 0.56;
+    color: var(--color-base-gray-500);
 }
 
 .avatar{
