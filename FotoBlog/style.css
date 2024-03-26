@@ -111,6 +111,14 @@ main h1{
 
 .gallery{
     margin-top: 3.2rem;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.2rem;
+}
+
+.item img{
+    width: 100%;
 }
 
 footer p{
