@@ -132,10 +132,15 @@ main h1{
 
 .item img:hover {
     filter: hue-rotate(7deg) contrast(101%) saturate(200%); /* usando filtro para imagem ficar com toma mais vivo. */
+    transform: scale(1.1) rotate(-2deg);
+
 }
 
 .img_details{
     padding: 2.2rem;
+    background-color: var(--color-base-white);
+    z-index: 1;
+    position: relative;
 }
 
 .img_details h2{
