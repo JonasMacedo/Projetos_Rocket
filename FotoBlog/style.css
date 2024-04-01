@@ -30,7 +30,7 @@ body{
 
 #app > *{
     /* apenas para visalizacao. */
-    border: 1px solid red; /* add bordas em todos os emementos da div */
+    /* border: 1px solid red; /* add bordas em todos os emementos da div */
 }
 
 #app{
@@ -129,8 +129,7 @@ main h1{
     aspect-ratio: 16/9; /* permite definir a proporcao da imagem como caixa.*/
     object-fit: cover;/* evita que a imagem fique esticada, redimensionando ela. */
 
-    transition-property: transform;
-    transition: 1s;
+    transition: all 200ms 
 }
 
 .item img:hover {
