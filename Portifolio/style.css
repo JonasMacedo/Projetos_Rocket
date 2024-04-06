@@ -73,3 +73,65 @@ img{
     background-color: #9443d8;
     color: #fff;
 }
+
+.main{
+    background-color: green;
+    
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - 125px);
+    gap: 50px;
+
+    justify-content: space-between;
+}
+
+.main .card_info{
+    background-color: black;
+
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    gap: 15px;   
+
+    letter-spacing: 2px;
+    padding: 0 15px;
+}
+
+.main .card_info h1{
+    font-family: "Raleway";
+    font-size: 45px;
+
+    margin-bottom: 20px;
+}
+
+.home .card_info p{
+    font-family: "Raleway";
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.card_info .socials_midia{
+    background-color: orange;
+    display: flex;
+    gap: 20px;
+}
+
+.card_info .socials_midia a i{
+    border: 1px solid #fff;
+    border-radius: 50%;
+    
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+
+    text-align: center;
+    font-size: 25px;
+
+    transition: 0.3s ;
+}
+
+.card_info .socials_midia a i:hover{
+    color: #9443d8;
+    border: 1px solid #9443d8;
+    transform: scale(1.1);
+}
