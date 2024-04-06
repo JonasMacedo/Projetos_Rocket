@@ -2,4 +2,54 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline: none;
 }
+
+body{
+    background-color: #282828;
+    font-family: "Poppins";
+
+    margin: 0 auto;
+    max-width: 1120px;
+    text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    max-width: 100%;
+}
+
+.cabecalho{
+    background-color: blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+.cabecalho .logo{
+    background-color: orange;
+    width: 82px;
+    height: 65px;
+
+    border-radius: 50%;
+    border: 2px solid #fff;
+
+    font-family: "Raleway";
+    text-align: center;
+    line-height: 55px;
+}
+
+.cabecalho a:hover .logo{
+    color: #9443d8;
+    border: 2px solid #9443d8 ;
+}
+
