@@ -5,6 +5,11 @@
     outline: none;
 }
 
+html{
+    color: #fff;
+    scroll-behavior: smooth; /*Suavizar a barra de rolagem.*/
+}
+
 body{
     background-color: #282828;
     font-family: "Poppins";
