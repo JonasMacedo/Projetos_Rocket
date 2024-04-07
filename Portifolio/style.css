@@ -169,3 +169,11 @@ img{
     margin-bottom: 20px;
     justify-content: center;
 }
+
+.container_projects .project{
+    max-width: 260px;   
+    max-height: 500px;
+    position: relative;
+
+    display: none;
+}
