@@ -286,3 +286,19 @@ img{
     }
 
 }
+
+@media(max-width: 425px){
+
+    .card_info h1{
+        font-size: 24px;
+    }
+    
+    .card_info p {
+        font-size: 14px;
+    }
+
+    .main .card_foto img{
+        max-width: 320px;
+    }
+
+}
