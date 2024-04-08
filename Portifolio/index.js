@@ -7,15 +7,19 @@ console.log(projetoInativos);
 
 btnWantMore.addEventListener('click', ()=>{
     
+    mostrarMaisProjetos();
+    esconderBotao();  
+})
+
+function mostrarMaisProjetos(){
     projetoInativos.forEach(proj => {
         // console.log(proj)
         proj.classList.remove('project')
         proj.classList.add('project_active')
     })
+}
 
+function esconderBotao(){
     btnWantMore.classList.remove('wantMore')
     btnWantMore.classList.add('remover')
-
-})
-
-
+}
