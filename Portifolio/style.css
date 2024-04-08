@@ -300,5 +300,8 @@ img{
     .main .card_foto img{
         max-width: 320px;
     }
-
+    
+    .projects{
+        padding: 30px;
+    }
 }
