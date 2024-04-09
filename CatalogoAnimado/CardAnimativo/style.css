@@ -12,4 +12,18 @@ body{
     width: 4rem;
     height: 4rem;
     background-color: orangered;
+    opacity: .9;
+}
+
+/* Toda animacao tem inicio, meio e fim.  */
+@keyframes move {
+    
+    0%{
+
+    }
+
+    100%{
+        
+    }
+
 }
