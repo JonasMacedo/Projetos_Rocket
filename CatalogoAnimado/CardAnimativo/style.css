@@ -10,7 +10,7 @@ body{
 
 .quadradinho{
     margin-top: 16px;
-    
+
     width: 4rem;
     height: 4rem;
     background-color: orangered;
@@ -23,6 +23,8 @@ body{
     animation-duration: 1s; /* Definindo tempo de duracao da animacao. */
 
     animation-fill-mode: forwards; /* Mantem o resultado final da animacao. */
+
+    animation-direction: reverse; /* Reverte a animacao. */
 }
 
 /* Toda animacao possui uma linha do tempo, com inicio, meio e fim.  */
