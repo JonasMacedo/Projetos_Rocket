@@ -24,7 +24,7 @@ body{
 
     animation-fill-mode: forwards; /* Mantem o resultado final da animacao. */
 
-    animation-direction: reverse; /* Reverte a animacao. */
+    /* animation-direction: reverse; Reverte a animacao. */
 }
 
 /* Toda animacao possui uma linha do tempo, com inicio, meio e fim.  */
@@ -34,8 +34,12 @@ body{
 
     }
     
-    100% { /* Fim da animacao. */
+    50% { /* Fim da animacao. */
         transform: translateX(calc(100vw - 100% - 16px));
+    }
+    
+    100% { /* Fim da animacao. */
+        /* transform: translateX(calc(100vw - 100% - 16px)); */
         
     }
 
