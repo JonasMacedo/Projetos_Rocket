@@ -9,20 +9,31 @@ body{
 }
 
 .quadradinho{
+    margin-top: 16px;
+    
     width: 4rem;
     height: 4rem;
     background-color: orangered;
-    opacity: .9;
+    opacity: .6;
+
 }
 
-/* Toda animacao tem inicio, meio e fim.  */
-@keyframes move {
+.quadradinho{
+    animation-name: mover; /* Chamando a animacao. */
+    animation-duration: 1s; /* Definindo tempo de duracao da animacao. */
+
+    animation-fill-mode: forwards; /* Mantem o resultado final da animacao. */
+}
+
+/* Toda animacao possui uma linha do tempo, com inicio, meio e fim.  */
+@keyframes mover {
     
-    0%{
+    0% { /* Inicio da animacao. */
 
     }
-
-    100%{
+    
+    100% { /* Fim da animacao. */
+        transform: translateX(calc(100vw - 100% - 16px));
         
     }
 
