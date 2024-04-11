@@ -129,7 +129,8 @@ main h1{
     aspect-ratio: 16/9; /* permite definir a proporcao da imagem como caixa.*/
     object-fit: cover;/* evita que a imagem fique esticada, redimensionando ela. */
 
-    transition: all 200ms 
+    transition: all 200ms;
+    display: block;
 }
 
 .item img:hover {
