@@ -33,6 +33,10 @@ body{
     animation-timing-function: ease-out;
 }
 
+.quadradinho:hover{
+    animation-play-state: paused; /* Definira se a animacao será inicia ou pausada */
+}
+
 /* Toda animacao possui uma linha do tempo, com inicio, meio e fim.  */
 @keyframes mover {
     
