@@ -19,8 +19,8 @@ body{
 }
 
 .quadradinho{
-    animation-name: mover; /* Chamando a animacao. */
-    animation-duration: 1s; /* Definindo tempo de duracao da animacao. */
+    animation-name: mover, piscar; /* Chamando a animacao. */
+    animation-duration: 3.5s, 200ms; /* Definindo tempo de duracao da animacao. */
 
     /* animation-fill-mode: forwards;  */
     /* Mantem o resultado final da animacao. */
@@ -30,7 +30,13 @@ body{
     animation-direction: alternate; /* Alterna o efeito de animacao. */
     animation-iteration-count: infinite;
 
-    animation-timing-function: ease-out;
+    /* animation-timing-function: ease-out; */
+    animation-timing-function: steps(10); /* Definindo intervalos para execucao. */
+
+    /* ShortHand. 
+    animation: move 1s forwards alternate infinite, piscar 200s infinite steps(10); 
+    */
+
 }
 
 .quadradinho:hover{
@@ -53,4 +59,21 @@ body{
         
     }
 
+}
+
+@keyframes piscar {
+
+    /* 
+    Para usar uma segunda animacao.
+    Na propriedade "animation:" basta separar com a virgula"," 
+    Veja como na linha 22.    
+    */
+
+    0%, 100%{
+        opacity: .6;
+    }
+
+    50%{
+        opacity: 1;
+    }    
 }
