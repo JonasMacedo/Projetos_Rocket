@@ -22,9 +22,15 @@ body{
     animation-name: mover; /* Chamando a animacao. */
     animation-duration: 1s; /* Definindo tempo de duracao da animacao. */
 
-    animation-fill-mode: forwards; /* Mantem o resultado final da animacao. */
+    /* animation-fill-mode: forwards;  */
+    /* Mantem o resultado final da animacao. */
 
     /* animation-direction: reverse; Reverte a animacao. */
+    
+    animation-direction: alternate; /* Alterna o efeito de animacao. */
+    animation-iteration-count: infinite;
+
+    animation-timing-function: ease-out;
 }
 
 /* Toda animacao possui uma linha do tempo, com inicio, meio e fim.  */
@@ -35,11 +41,11 @@ body{
     }
     
     50% { /* Fim da animacao. */
-        transform: translateX(calc(100vw - 100% - 16px));
+        /* transform: translateX(calc(100vw - 100% - 16px)); */
     }
     
     100% { /* Fim da animacao. */
-        /* transform: translateX(calc(100vw - 100% - 16px)); */
+        transform: translateX(calc(100vw - 100% - 16px));
         
     }
 
