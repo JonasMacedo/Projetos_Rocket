@@ -14,8 +14,23 @@ p{
     font-size: 1.0rem;
 }
 
+img{
+    width: 100%;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+main{
+    padding: 1.6rem;
+}
+
 .app{
-    border: 1px solid red; 
     display: grid;
     height: 100Vh;
 }
@@ -60,3 +75,26 @@ p{
     font-size: 1.6rem;
     font-weight: 600;
 }
+
+.container_main{
+    border: 2px solid red;
+    
+    /* width: min(112rem, 100%); */
+    width: min(94rem, 100%);
+}
+
+.item img{
+    grid-column: 1/4;
+    border-radius: 0rem 0rem 0.4rem 0.4rem;
+}
+
+.item a img{
+    width: 2.0rem;
+    height: 2.0rem;
+}
+
+.icons{
+    display: flex;
+    justify-content: space-between;
+} 
+
