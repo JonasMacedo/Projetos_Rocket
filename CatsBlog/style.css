@@ -101,8 +101,21 @@ main{
     padding: 10px 0;
 }
 
+.gallery{
+    display: grid;
+    grid-template-columns: 1f 1f;
+    gap: 10px;
+}
+
 .gallery img{
     border: 2px solid red;
-    width: 151px;
-    height: 84px;
+    margin: 0 10px;
+
+    /* grid-column: 1/-1; */
+    width: 551px;
+    height: 114px; 
+}
+
+.gallery .card{
+    display: flex;
 }
