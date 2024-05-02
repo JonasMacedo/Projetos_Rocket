@@ -103,7 +103,7 @@ main{
 
 .gallery{
     display: grid;
-    grid-template-columns: 1f 1f;
+    /* grid-template-columns: 1f 1f; */
     gap: 10px;
 }
 
