@@ -31,7 +31,8 @@ a{
 }
 
 main{
-    padding: 1.6rem;
+    margin-top: 1.6rem;
+    padding: 0 0 0 1.6rem;
 }
 
 .app{
@@ -85,12 +86,12 @@ main{
 
 main{
     display: grid;
-    grid-template-columns: 600px 300px;
+    grid-template-columns: 38rem 30rem;
+    gap: 2.9rem;
 }
 
 .container_main{
     width: min(94rem, 100%);
-    border: 1px solid red; 
 }
 
 .item img{
@@ -115,18 +116,14 @@ main{
 
 .gallery{
     display: grid;
-    /* grid-template-columns: 1f 1f; */
-    gap: 10px;
-    border: 1px solid purple;
+    grid-template-columns: 41.7rem;
+    gap: 2.0rem;
 }
 
 .gallery img{
-    border: 2px solid red;
-    margin: 0 10px;
-
-    /* grid-column: 1/-1; */
-    width: 55.1rem;
-    height: 11.4rem; 
+    width: 35.1rem;
+    height: 6.4rem; 
+    padding-right: 1.0rem;
 }
 
 .gallery .card{
