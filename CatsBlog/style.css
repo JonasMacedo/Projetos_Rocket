@@ -55,8 +55,8 @@ main{
 }
 
 .content_header img{
-    width: 4.2rem;
-    height: 4.2rem;
+    width: 3.0rem;
+    height: 3.0rem;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -128,4 +128,19 @@ main{
 
 .gallery .card{
     display: flex;
+}
+
+.foot{
+    background-color: var(--color-base-blue01);
+    color: antiquewhite;
+    
+    margin-top: 2.0rem;
+
+    width: 84.3rem;   
+    height: 4.2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
 }
