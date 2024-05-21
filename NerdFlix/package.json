@@ -9,13 +9,16 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^20.12.12",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.4.5"
   },
   "dependencies": {
+    "@types/mongodb": "^4.0.7",
     "core-js": "^3.37.1",
     "graphql": "^16.8.1",
     "graphql-scalars": "^1.23.0",
+    "mongodb": "^6.6.2",
     "reflect-metadata": "^0.2.2",
     "type-graphql": "^2.0.0-rc.1"
   }
