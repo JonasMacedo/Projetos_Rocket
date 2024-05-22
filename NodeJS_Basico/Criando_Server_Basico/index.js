@@ -10,7 +10,7 @@ http.createServer((req,resp)=>{
     console.log('Recebendo uma requisicao')
 
     resp.writeHead(200,{
-        'Content-Type': 'text/plain'
+        'Content-Type': 'text/plain' // tipo de retorno de conteudo.
     })
     resp.write('Basico de NodeJS\n')
     resp.end()
