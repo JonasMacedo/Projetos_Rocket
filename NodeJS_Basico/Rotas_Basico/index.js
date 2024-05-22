@@ -1,6 +1,6 @@
 
 const http = require('http')
-const dor = 3033
+const door = 3033
 
 const servidor = http.createServer((req,res)=>{
     
@@ -15,4 +15,4 @@ const servidor = http.createServer((req,res)=>{
     }
     res.end()
 })
-servidor.listen(dor,()=>{console.log('Servidor ativo')})
+servidor.listen(door,()=>{console.log('Servidor ativo\n','Para derrubar o servidor: ctrl + c')})
