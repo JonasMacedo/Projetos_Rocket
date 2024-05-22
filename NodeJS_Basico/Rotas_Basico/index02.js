@@ -1,12 +1,16 @@
-const http = require('http')
-const door = 3030
-const url = require('url')
+const express= require('express')
+const app = express()
 
-const server = http.createServer((req,res)=>{
-    res.writeHead(200,{'Content-Type':'text/html'})
-    res.write('<h1>Pagina Home</h1>')
+const door = 3030
+
+app.get('/',(req,res)=>{ // sera definido uma metodo GET para cada rota da aplicacao.
+    res.send('<h1>Pagina Home</h1>')
 })
 
-server.listen(door || 3033, ()=>{
+app.get('/pagina01',(req,res)=>{ 
+    res.send('<h1>Pagina 01</h1>')
+})
+
+app.listen(door || 3033, ()=>{
     console.log('Servidor rodando\nPara derrubar o servidor: ctrl + c')
 })
