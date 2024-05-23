@@ -14,11 +14,11 @@ rotas.get('/',(req,res)=>{
 
 rotas.get('/:cursoId',(req,res)=>{
     
-    const curso = req.params.cursoId
+    const curso = req.params.cursoId // obtendo parametro da URL.
     const infCurso = cursosInfo.find(i=>i.curso == curso)
 
     if(!infCurso){
-        res.status(404).json({erro:'Curso não encontrado'})
+        res.status(404).json({erro:'Curso não encontrado', cursoPesquisado: curso})
     }else{
         res.status(200).json({infCurso})
     }
