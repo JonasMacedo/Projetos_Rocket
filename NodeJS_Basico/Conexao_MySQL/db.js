@@ -34,4 +34,11 @@ const allClients = async()=>{
     return await lines
 }
 
-export{dbOptions,connect,allClients}
+const addClient = async(cliente)=>{
+    const con = await connect()
+    const sql = 'insert into clientes_node (nome,idade) values(?,?)'
+    const valores = [cliente.nome, cliente.idade]
+    await  con.query(sql, valores)
+}
+
+export{dbOptions,connect,allClients, addClient}
