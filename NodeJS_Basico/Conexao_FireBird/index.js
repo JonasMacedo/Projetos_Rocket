@@ -1,37 +1,22 @@
 import express from "express"
 import cors from "cors"
-import { fbOptions } from "./db.js"
-import  Firebird  from "node-firebird";
+import { findItems } from "./db.js" // importando a funcao de busca.
 
 const app = express()
 
 app.use(express.json())
 app.use(cors())
 
-app.get("/lista",(req,res)=>{
-    
-    Firebird.attach(fbOptions, function(err, db) {
-        
-        if (err){
-           return res.status(502).json(err)
+
+//Rotas
+app.get("/lista", function(req,res){
+    findItems('SELECT codigo, descricao FROM testprodutogeral', [], function(error, result){
+        if (error) {
+            res.status(500).json(error)
+        }else{
+            res.status(200).json(result)
         }
-
-        // res.status(200).send('Listando produtos:\n')
-    
-        // db = DATABASE
-        db.query('SELECT codigo, descricao FROM testprodutogeral', function(err, result) {
-
-            db.detach();
-            
-            if (err){
-                return res.status(406).json(err)
-            }else{
-                return res.status(200).json(result)            
-            }
-
-        });
-    
-    });
+    })
 })
 
 
