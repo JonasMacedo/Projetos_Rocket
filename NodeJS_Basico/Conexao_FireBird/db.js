@@ -1,4 +1,5 @@
-const dbOptions = { 
+
+const fbOptions = { 
     host : '127.0.0.1',
     port : 3050,
     database : 'C:\\ECOSIS\\DADOS\\PAF_RODRIGUES.eco', // caminho do banco na maquina.
@@ -12,3 +13,5 @@ const dbOptions = {
     blobAsText : false, // set to true to get blob as text, only affects blob subtype 1
     encoding : 'UTF-8', // default encoding for connection is UTF-8
 };
+
+export{fbOptions}
