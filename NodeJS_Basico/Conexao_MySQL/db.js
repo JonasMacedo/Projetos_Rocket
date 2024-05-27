@@ -45,7 +45,13 @@ const updateClient = async(id,cliente)=>{
     const con = await connect()
     const sql = 'update clientes_node set nome=?, idade=? where id=?'
     const valores = [cliente.nome, cliente.idade,id]
-    await  con.query(sql, valores,id)
+    await  con.query(sql, valores)
+}
+const deletClient = async(id)=>{
+    const con = await connect()
+    const sql = 'delete from clientes_node where id=?'
+    const valores = [id]
+    await  con.query(sql, valores)
 }
 
-export{dbOptions,connect,allClients, addClient}
+export{dbOptions,connect,allClients, addClient, updateClient, deletClient}
