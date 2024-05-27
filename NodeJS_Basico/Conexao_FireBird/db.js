@@ -1,3 +1,4 @@
+import Firebird from "node-firebird"
 
 const fbOptions = { 
     host : '127.0.0.1',
@@ -14,4 +15,30 @@ const fbOptions = {
     encoding : 'UTF-8', // default encoding for connection is UTF-8
 };
 
-export{fbOptions}
+function findItems(sql, params, callback){
+    
+    Firebird.attach(fbOptions, function(err, db) {
+            
+        if (err){
+           return callback(err,[])
+        }
+    
+        // res.status(200).send('Listando produtos:\n') // Nao pode ter 2 repostas http iguais.
+    
+        // db = DATABASE
+        db.query(sql, params, function(err, result) {
+            //'SELECT codigo, descricao FROM testprodutogeral'
+            db.detach();
+            
+            if (err){
+                return callback(err,[]); 
+            }else{
+                return callback(undefined, result);                 
+            }
+    
+        });
+    
+    });
+}
+
+export{findItems}
