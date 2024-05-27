@@ -41,4 +41,11 @@ const addClient = async(cliente)=>{
     await  con.query(sql, valores)
 }
 
+const updateClient = async(id,cliente)=>{
+    const con = await connect()
+    const sql = 'update clientes_node set nome=?, idade=? where id=?'
+    const valores = [cliente.nome, cliente.idade,id]
+    await  con.query(sql, valores,id)
+}
+
 export{dbOptions,connect,allClients, addClient}
