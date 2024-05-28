@@ -10,7 +10,19 @@ app.use(cors())
 
 //Rotas
 app.get("/lista", function(req,res){
-    findItems('SELECT codigo, descricao FROM testprodutogeral', [], function(error, result){
+
+    let filtro = [] 
+    let sql = 'SELECT codigo, descricao FROM testprodutogeral where codigo > 0 '
+
+    if (req.query.descricao){ // verifica se foi informado um parametro na rota HTTP.
+        
+        // http://localhost:3033/lista?descricao=OLIVA&EXTRA
+
+        sql+= "and descricao like ?"      
+        filtro.push("%"+req.query.descricao+"%") // adicionando para o filtro.
+    }
+
+    findItems(sql, filtro, function(error, result){
         if (error) {
             res.status(500).json(error)
         }else{
