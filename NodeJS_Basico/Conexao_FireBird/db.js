@@ -15,7 +15,7 @@ const fbOptions = {
     encoding : 'UTF-8', // default encoding for connection is UTF-8
 };
 
-function findItems(sql, params, callback){
+function executeQuery(sql, params, callback){
     
     Firebird.attach(fbOptions, function(err, db) {
             
@@ -41,4 +41,4 @@ function findItems(sql, params, callback){
     });
 }
 
-export{findItems}
+export{executeQuery}

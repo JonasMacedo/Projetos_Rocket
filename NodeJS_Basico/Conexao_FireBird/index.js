@@ -1,6 +1,6 @@
 import express from "express"
 import cors from "cors"
-import { findItems } from "./db.js" // importando a funcao de busca.
+import { executeQuery } from "./db.js" // importando a funcao de busca.
 
 const app = express()
 
@@ -22,7 +22,7 @@ app.get("/lista", function(req,res){
         filtro.push("%"+req.query.descricao+"%") // adicionando para o filtro.
     }
 
-    findItems(sql, filtro, function(error, result){
+    executeQuery(sql, filtro, function(error, result){
         if (error) {
             res.status(500).json(error)
         }else{
@@ -37,7 +37,7 @@ app.post("/add", function(req,res){
          
     console.log(req.body.descricao, req.body.codigo)
 
-    findItems(sql,[req.body.descricao, req.body.codigo], function(error, result){
+    executeQuery(sql,[req.body.descricao, req.body.codigo], function(error, result){
         if (error) {
             res.status(500).json(error)
         }else{
