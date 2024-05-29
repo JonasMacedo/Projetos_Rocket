@@ -41,4 +41,4 @@ function executeQuery(sql, params, callback){
     });
 }
 
-export{executeQuery}
+export{executeQuery, Firebird,fbOptions}
