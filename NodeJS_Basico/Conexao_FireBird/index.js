@@ -1,6 +1,6 @@
 import express from "express"
 import cors from "cors"
-import { executeQuery, fbOptions, Firebird } from "./db.js" // importando a funcao de busca.
+import { executeQuery, fbOptions, Firebird, executeQueryTransaction } from "./db.js" // importando a funcao de busca.
 
 const app = express()
 
@@ -56,7 +56,7 @@ app.post("/pedidos", function(req,res){
         }
         
         // Ira realizar a transacao, caso consiga ira grava a operacao no banco, caso ñ consiga ira fazer o rollback desfazendo tudo.
-        db.transaction(Firebird.ISOLATION_READ_COMMITTED, function(err,transaction) {
+        db.transaction(Firebird.ISOLATION_READ_COMMITTED, async function(err,transaction) {
             
             if(err){
                 return res.status(500).json(err)
@@ -64,12 +64,28 @@ app.post("/pedidos", function(req,res){
             
             try { // ira tentar realizar a operacao.
                 
-                let sql = "inset into tvenpedido(idcliente,idvenda) values(?,?) returning idpedido"
+                let ssql = "insert into tvenpedido(empresa, codigo, cliente, condicaopagto) values(?,?,?,?) returning idpedido"
 
-            } catch (error) {
+                //Grava pedido
+                let transacao = await executeQueryTransaction(transaction, ssql, [req.body.empresa, req.body.codigo, req.body.cliente, req.body.condicaopagto])
+                let pedido = transacao.codigo
                 
-            }
+                transaction.commite(function(err){
+                    if (err) {
+                        transaction.rollback()
+                        res.status(500).json(err)
+                    }else{
+                        res.status(201).json({codigo: pedido})
+                    }
+                })
             
+            } catch (error) {
+                transaction.rollback()
+                res.status(500).json(error)
+            }
+
+            db.detach()
+
         })
     })
     
