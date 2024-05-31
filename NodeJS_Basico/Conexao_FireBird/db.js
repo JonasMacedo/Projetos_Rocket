@@ -41,4 +41,18 @@ function executeQuery(sql, params, callback){
     });
 }
 
-export{executeQuery, Firebird,fbOptions}
+async function executeQueryTransaction(transaction, sql, params) {
+    return new Promise((resolve,reject)=>{
+        transaction.query(sql, params,function(err, result){
+            if (err) {
+                console.log("Falha na transação:\n")
+                return reject(err)
+            }else{
+                console.log("Sucesso na transação:\n")
+                return resolve(result)
+            }
+        })
+    })
+}
+
+export{executeQuery, Firebird, fbOptions, executeQueryTransaction}
