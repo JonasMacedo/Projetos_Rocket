@@ -70,6 +70,12 @@ app.post("/pedidos", function(req,res){
                 let transacao = await executeQueryTransaction(transaction, ssql, [req.body.empresa, req.body.codigo, req.body.cliente, req.body.condicaopagto])
                 let pedido = transacao.codigo
                 
+                //Grava itens
+                for (var i = 0; i < req.body.itens.lenght; i++) {
+                    ssql="INSERT INTO TAB_PEDIDO_ITEM(pedido, id_produto, qtde, valor_unit, valor_total) VALUES(?,?,?,?,?)"
+                    await executeQueryTransaction(transaction, ssql,[pedido, req.body.itens[i].id_produto, req.body.itens[i].qtde, req.body.itens[i].valor_unit, req.body.itens[i].valor_total])
+                }
+
                 transaction.commite(function(err){
                     if (err) {
                         transaction.rollback()
