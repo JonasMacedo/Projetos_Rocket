@@ -12,7 +12,7 @@ app.use(cors())
 app.get("/lista", function(req,res){
 
     let filtro = [] 
-    let sql = 'SELECT codigo, descricao FROM testprodutogeral where codigo > 0 '
+    let sql = "select * from tab_produto "
 
     if (req.query.descricao){ // verifica se foi informado um parametro na rota HTTP.
         
@@ -33,17 +33,19 @@ app.get("/lista", function(req,res){
 
 app.post("/add", function(req,res){
 
-    let sql = 'INSERT INTO testprodutogeral(descricao, codigo) VALUES(?,?) RETURNING CODIGO'
-         
-    console.log(req.body.descricao, req.body.codigo)
+    let sql = "INSERT INTO tab_produto(DESCRICAO, VALOR) VALUES( ?, ?) RETURNING id_produto"
+    let desc= req.body.DESCRICAO
+    let vlr = Number.parseInt(req.body.VALOR)
+    console.log(desc,vlr)
 
-    executeQuery(sql,[req.body.descricao, req.body.codigo], function(error, result){
+    executeQuery(sql,[req.body.DESCRICAO, req.body.VALOR], function(error, result){
         if (error) {
             res.status(500).json(error)
         }else{
-        res.status(200).json({codigo: result.codigo})
+            res.status(201).json({id_produto: result.id_produto})
         }
     })
+
 })
 
 app.post("/pedidos", function(req,res){
