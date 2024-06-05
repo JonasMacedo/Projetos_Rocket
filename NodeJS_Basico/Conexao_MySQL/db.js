@@ -41,3 +41,13 @@ const deletClient = async(id)=>{
 
 conect()
 export{connect, allClients, addClient, updateClient, deletClient}
+
+/* 
+Script do banco MySQL
+create table cliente(
+    idCliente int primary key not null auto_increment,
+    nome varchar(10),
+    idade int 
+);
+
+*/
