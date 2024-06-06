@@ -1,6 +1,6 @@
 import express from "express"
 import cors from "cors"
-
+import {allClients} from './db.js'
 
 const app = express()
 
@@ -12,10 +12,17 @@ app.get("/",(req,res)=>{
     res.status(200).send('Pagina Home')
 })
 
-app.get("/produtos",(req,res)=>{
-        
+app.get("/allClients",(req,res)=>{
+    
+    // res.sendStatus(200).json(allClients())
 
+    const clientes = async()=>{ 
+        await allClients()
+    }
+    console.log(clientes)
+    res.sendStatus(200).json(clientes)
+   
 })
 
-app.listen(3033,()=>{console.log("Servidor ativo\nPara desativar: Ctrl+C")})
+app.listen(3035,()=>{console.log("Servidor MySQL ativo\nPara desativar: Ctrl+C")})
 
