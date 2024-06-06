@@ -14,21 +14,22 @@ const connect = async ()=>{ // conectando com o banco MySQL
 }
 
 const allClients = async()=>{
+    console.log('Metodo de busca clientes')
     const con = await connect()
     const [lines] = await con.query('select * from cliente')
-    return await lines
+    return  lines
 }
 
 const addClient = async(cliente)=>{
     const con = await connect()
-    const sql = 'insert into cliente (nome,idade) values(?,?)'
+    const sql = 'insert into cliente (nome,idade,sobreNome) values(?,?,?)'
     const valores = [cliente.nome, cliente.idade]
     await  con.query(sql, valores)
 }
 
 const updateClient = async(id,cliente)=>{
     const con = await connect()
-    const sql = 'update cliente set nome=?, idade=? where id=?'
+    const sql = 'update cliente set nome=?, idade=?, sobrenome=? where id=?'
     const valores = [cliente.nome, cliente.idade,id]
     await  con.query(sql, valores)
 }
