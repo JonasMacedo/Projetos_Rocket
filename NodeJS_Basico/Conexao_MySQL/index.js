@@ -12,15 +12,12 @@ app.get("/",(req,res)=>{
     res.status(200).send('Pagina Home')
 })
 
-app.get("/allClients",(req,res)=>{
+app.get("/allClients", async (req,res)=>{
     
-    // res.sendStatus(200).json(allClients())
+    const clientes = await allClients()
 
-    const clientes = async()=>{ 
-        await allClients()
-    }
     console.log(clientes)
-    res.sendStatus(200).json(clientes)
+    res.json(clientes)
    
 })
 
