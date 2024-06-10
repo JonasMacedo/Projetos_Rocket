@@ -1,6 +1,6 @@
 import express from "express"
 import cors from "cors"
-import {addClient, allClients} from './db.js'
+import {addClient, allClients, updateClient} from './db.js'
 
 const app = express()
 
@@ -22,14 +22,26 @@ app.get("/allClients", async (req,res)=>{
 })
 
 app.post("/addClient", async (req,res)=>{
-     
+    
     var client = [req.body.nome, req.body.idade, req.body.sobrenome]
-
+    
     //console.log(client)
     
     const newCliente = await addClient(client)
     res.json(newCliente)
     
+})
+
+app.put("/updateClient", async (req,res)=>{
+    
+    let iD = req.body.id
+    let client = [req.body.nome, req.body.idade, req.body.sobrenome]
+    
+    console.log(client)
+    const updtClient = await updateClient(iD,client)
+    res.json(updtClient)
+    
+
 })
     
 app.listen(3035,()=>{console.log("Servidor MySQL ativo\nPara desativar: Ctrl+C")})

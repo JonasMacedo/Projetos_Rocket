@@ -30,10 +30,13 @@ const addClient = async(cliente)=>{
     await  con.query(sql, valores)
 }
 
-const updateClient = async(id,cliente)=>{
+const updateClient = async(id, cliente)=>{
+    console.log(cliente)
     const con = await connect()
-    const sql = 'update cliente set nome=?, idade=?, sobrenome=? where id=?'
-    const valores = [cliente.nome, cliente.idade,id]
+    const sql = 'update cliente set nome=?, idade=?, sobrenome=? where idCliente=?'
+    
+    // Os valores precisam estar na mesma ordem de script
+    const valores = [cliente[0], cliente[1], cliente[2], id]
     await  con.query(sql, valores)
 }
 const deletClient = async(id)=>{
