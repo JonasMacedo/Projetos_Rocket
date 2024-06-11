@@ -36,11 +36,13 @@ app.put("/updateClient", async (req,res)=>{
     
     let iD = req.body.id
     let client = [req.body.nome, req.body.idade, req.body.sobrenome]
-    
-    console.log(client)
-    const updtClient = await updateClient(iD,client)
-    res.json(updtClient)
-    
+
+    if ( isNaN(iD)) {
+        res.status(400).json(`o ID ${iD} é do tipo: ${typeof iD}, e o cliente é do tipo ${typeof client}`)
+    }else{
+         await updateClient(iD, client)
+        res.json(`Cliente ${iD} atualizado`);
+    }
 
 })
     
