@@ -25,25 +25,24 @@ const addClient = async(cliente)=>{
     const con = await connect()
     
     const sql = 'insert into cliente (nome,idade,sobreNome) values(?,?,?)'
-    // const valores = [cliente.nome, cliente.idade]
     const valores = [cliente[0], cliente[1], cliente[2]]
     await  con.query(sql, valores)
 }
 
 const updateClient = async(id, cliente)=>{
-    console.log(cliente)
     const con = await connect()
     const sql = 'update cliente set nome=?, idade=?, sobrenome=? where idCliente=?'
     
-    // Os valores precisam estar na mesma ordem de script
+    // Os valores precisam estar na mesma ordem de query.
     const valores = [cliente[0], cliente[1], cliente[2], id]
     await  con.query(sql, valores)
 }
+
 const deletClient = async(id)=>{
     const con = await connect()
-    const sql = 'delete from cliente where id=?'
+    const sql = 'delete from cliente where idCliente=?'
     const valores = [id]
-    await  con.query(sql, valores)
+    await con.query(sql, valores)
 }
 
 connect() // Ele mesmo já executa a conexão com o banco.
