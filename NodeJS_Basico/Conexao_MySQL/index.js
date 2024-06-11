@@ -1,6 +1,6 @@
 import express from "express"
 import cors from "cors"
-import {addClient, allClients, updateClient} from './db.js'
+import {addClient, allClients, deletClient, updateClient} from './db.js'
 
 const app = express()
 
@@ -40,11 +40,23 @@ app.put("/updateClient", async (req,res)=>{
     if ( isNaN(iD)) {
         res.status(400).json(`o ID ${iD} é do tipo: ${typeof iD}, e o cliente é do tipo ${typeof client}`)
     }else{
-         await updateClient(iD, client)
+        await updateClient(iD, client)
         res.json(`Cliente ${iD} atualizado`);
     }
 
 })
+
+app.delete("/deletClient", async (req,res)=>{
+    let iD = parseInt(req.body.id)
     
+    if ( isNaN(iD)) {
+        res.status(400).json(`o ID ${iD} é do tipo: ${typeof iD}`)
+    }else{
+        await deletClient(iD)
+        res.json(`Cliente ${iD} Removido`);
+    }
+    
+})
+
 app.listen(3035,()=>{console.log("Servidor MySQL ativo\nPara desativar: Ctrl+C")})
 
