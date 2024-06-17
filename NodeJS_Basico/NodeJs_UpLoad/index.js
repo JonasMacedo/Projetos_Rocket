@@ -23,27 +23,26 @@ app.get('/',(req,res)=>{
 
 app.post('/api/upload_file',(req,res)=>{
     const form = formidable({})
-
+    // console.log('formidable: ',form)
+    
     form.parse(req, (error, fields, files)=>{
-        const ulrAntiga = files.fileUpload // salva o caminho da pasta.
-        const urlNova = 'C:\EcoNFCe\Imagens'+ files.fileUpload.name
         
-        console.log(ulrAntiga.includes("filepath"))
-        console.log('filtrando',files.fileUpload.filter( f => f.filepath))
-                
-        fs.rename(ulrAntiga, urlNova,(error)=>{ // ERRO NO RECEBIMENTO DO PARAMETRO
-            if (error){ 
-                return res.status(400).json({error:'Imagem não pode ser enviada'})
-            }else{
-                res.write('Arquivo movido!!')    
-                res.json({fields,files})
-            }
+        let oldPath = files.fileUpload[0].filepath // salva o caminho da pasta.
+        const diretorioNovo = 'C:\\EcoNFCe\\Imagens\\'+ files.fileUpload[0].originalFilename
+        
+        console.log('\narquivo: ', oldPath)
+        
+        fs.rename(oldPath, diretorioNovo,(error)=>{ // ERRO NO RECEBIMENTO DO PARAMETRO
+            
+            if (error) throw error
+            
+            res.write('Arquivo movido!!\n'+diretorioNovo)    
+            res.end()
+            
         })        
-
+        
     })
 })
 
-app.listen(port,()=>{
-    console.log("Servidor ativo \nPara desativar Ctrl+C")
-})
+app.listen(port,()=>{console.log("Servidor ativo \nPara desativar Ctrl+C")})
 
