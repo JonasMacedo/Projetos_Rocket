@@ -15,14 +15,14 @@ app.post('/adduser', async (req, res)=>{
     let user = req.body
 
     let newUser = await User.create(user)
-    return res.json(newUser)
+    return res.status(201).json(newUser)
 
 })
 
 app.get('/getusers', async (req, res)=>{
 
     let allUser = await User.find()
-    return res.json(allUser)
+    return res.status(200).json(allUser)
 
 })
 
