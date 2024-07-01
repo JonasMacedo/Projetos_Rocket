@@ -5,15 +5,18 @@ const urlMongo = "mongodb+srv://jonasmdcarvalho:Nodejs@estudonodejs.jg2bdpr.mong
 
 async function connectMongo(){
     mongoose.connect(urlMongo)
-    .then(()=>{console.log("conectou ao MongoDB")})
+    .then(()=>{console.log("conectou ao MongoDB @")})
     .catch(()=>{("Falha na conexão com o MongoDB!!")})
     
 }
 
 const addUser = async (user)=>{
+    console.log(user)
     
-    let conect = await connectMongo()
+    let connect = await connectMongo()
     let newUser = await User.create(user)
+
+    return newUser
         
 }
 
@@ -25,5 +28,4 @@ const allUsers = async ()=>{
     return allUsers
 }
 
-connectMongo()
 export{addUser, allUsers}
