@@ -17,15 +17,22 @@ const addUser = async (user)=>{
     let newUser = await User.create(user)
 
     return newUser
-        
 }
 
 const allUsers = async ()=>{
     
     let connect = await connectMongo()
     let allUsers = await User.find()
-
+    
     return allUsers
 }
 
-export{addUser, allUsers}
+const findUser = async (id)=>{
+    
+    let connect = await connectMongo()
+    let user = await User.findById(id)
+
+    return user
+}
+
+export{addUser, allUsers, findUser}

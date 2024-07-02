@@ -1,6 +1,6 @@
 import express from 'express'
 
-import { addUser, allUsers } from './db.js' 
+import { addUser, allUsers, findUser } from './db.js' 
 
 const app = express()
 app.use(express.json())
@@ -15,11 +15,20 @@ app.post('/adduser', async (req, res)=>{
 })
 
 app.get('/getusers', async (req, res)=>{
-
+    
     let all = await allUsers()
     return res.status(200).json(all)
-
+    
 })
 
+app.get('/getuser/:id', async (req, res)=>{
+    
+    let {id} = req.params
+    // console.log('Id informado: ', id)
+
+    let user = await findUser(id)
+    return res.status(200).json(user)
+
+})
 
 app.listen(3035, ()=>{console.log('Servidor ativo!!🚀 \nPara desativar Ctrl+C')})
