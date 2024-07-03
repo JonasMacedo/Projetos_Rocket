@@ -31,8 +31,26 @@ const findUser = async (id)=>{
     
     let connect = await connectMongo()
     let user = await User.findById(id)
-
+    
     return user
 }
 
-export{addUser, allUsers, findUser}
+const upDateUser = async(body)=>{
+    
+    let connect = await connectMongo()
+    
+    try {
+        let user = await User.findByIdAndUpdate(body.id)
+        
+        if (!user) {
+            return res.status(404).json({message: "Usuario não encontrado"})    
+        }
+        
+        return res.status(404).json({message: "Usuario não encontrado"})    
+
+    } catch (error) {
+        return res.status(500).json({message: error.message})
+    }
+}
+
+export{addUser, allUsers, findUser, upDateUser}
