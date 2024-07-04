@@ -57,4 +57,26 @@ const upDateUser = async(body)=>{
     }
 }
 
-export{addUser, allUsers, findUser, upDateUser}
+const deleteUser = async(id)=>{
+
+    let connect = await connectMongo()
+    
+    try {
+        let user = await User.findByIdAndDelete(id)
+        
+        if (!user) {
+            return user.message    
+        }    
+        
+        let users = await User.find()
+        return users
+
+    } catch (error) {
+        return error
+    }
+
+
+
+}
+
+export{addUser, allUsers, findUser, upDateUser, deleteUser}
