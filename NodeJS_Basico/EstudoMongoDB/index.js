@@ -1,6 +1,6 @@
 import express from 'express'
 
-import { addUser, allUsers, findUser, upDateUser } from './db.js' 
+import { addUser, allUsers, deleteUser, findUser, upDateUser } from './db.js' 
 
 const app = express()
 app.use(express.json())
@@ -14,7 +14,7 @@ app.post('/adduser', async (req, res)=>{
 
 })
 
-app.get('/getusers', async (req, res)=>{
+app.get('/getallusers', async (req, res)=>{
     
     let all = await allUsers()
     return res.status(200).json(all)
@@ -34,6 +34,13 @@ app.get('/getuser/:id', async (req, res)=>{
 app.put('/attuser', async(req,res)=>{
     
     let user = await upDateUser(req.body)
+    return res.json(user)
+})
+
+app.delete('/deleteuser/:id', async(req,res)=>{
+    
+    let {id} = req.params
+    let user = await deleteUser(id)
     return res.json(user)
 })
 
