@@ -33,12 +33,8 @@ app.get('/getuser/:id', async (req, res)=>{
 
 app.put('/attuser', async(req,res)=>{
     
-    let list = req.body
-    
-    //let user = await findUser(list.id)
-    let user = await upDateUser(list)
-
-    
+    let user = await upDateUser(req.body)
+    return res.json(user)
 })
 
 app.listen(3035, ()=>{console.log('Servidor ativo!!🚀 \nPara desativar Ctrl+C')})
