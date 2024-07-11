@@ -10,7 +10,7 @@ app.post('/adduser', async (req, res)=>{
     let userDados = req.body
     let user = await addUser(userDados)
 
-    return res.status(201).json(user)
+    return res.json(user)
 
 })
 
@@ -41,7 +41,7 @@ app.delete('/deleteuser/:id', async(req,res)=>{
     
     let {id} = req.params
     let user = await deleteUser(id)
-    return res.json(user)
+    return res.status(200).json(user)
 })
 
 app.listen(3035, ()=>{console.log('Servidor ativo!!🚀 \nPara desativar Ctrl+C')})
