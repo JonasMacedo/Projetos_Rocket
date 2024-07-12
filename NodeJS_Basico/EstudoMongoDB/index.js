@@ -4,6 +4,7 @@ import { addUser, allUsers, deleteUser, findUser, upDateUser } from './db.js'
 
 const app = express()
 app.use(express.json())
+app.use(express.urlencoded({extended:false})) // Para que o receba formularios por URL
 
 app.post('/adduser', async (req, res)=>{
 
