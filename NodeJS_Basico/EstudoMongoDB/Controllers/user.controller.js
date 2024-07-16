@@ -25,10 +25,11 @@ const findUser = async (req, res)=>{
     }
 }
 
-const addUser = async (user)=>{
+const addUser = async (req, res)=>{
     // console.log(user)
     
-    let {name} = user // desestruturacao para pegar o campo NAME.
+    let {name} = req.body // desestruturacao para pegar o campo NAME.
+    let user = req.body
     let connect = await connectMongo()
 
     try { // verifica se já existe o usuario.
@@ -38,7 +39,7 @@ const addUser = async (user)=>{
         if(!pesquisaUser){ //caso nao exista o usuario.
             let newUser = await User.create(user)
             console.log('criado o usuario: ', newUser)
-            return newUser
+            return res.status(200).json(newUser)
         }
         return pesquisaUser
 
