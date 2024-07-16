@@ -1,5 +1,29 @@
-import users from "../Models/users"
-import mongoose, { model } from "mongoose"
+import express from 'express'
+import mongoose from "mongoose";
+
+import User from "../Models/users.js"
+import { connectMongo } from "../db.js"
+
+const allUsers = async (req, res)=>{
+    
+    let connect = await connectMongo()
+    let allUsers = await User.find()
+    
+    return res.json(allUsers)
+}
+
+const findUser = async (req, res)=>{
+    try {
+        const {id} = req.params
+        let connect = await connectMongo()
+        let user = await User.findById(id)
+        
+        return res.status(200).json(user)
+    } catch (error) {
+        return res.status(500).json({message: error.message})
+        
+    }
+}
 
 const addUser = async (user)=>{
     // console.log(user)
@@ -24,21 +48,8 @@ const addUser = async (user)=>{
 
 }
 
-const allUsers = async ()=>{
-    
-    let connect = await connectMongo()
-    let allUsers = await User.find()
-    
-    return allUsers
-}
 
-const findUser = async (id)=>{
-    
-    let connect = await connectMongo()
-    let user = await User.findById(id)
-    
-    return user
-}
+
 
 const upDateUser = async(body)=>{
     
