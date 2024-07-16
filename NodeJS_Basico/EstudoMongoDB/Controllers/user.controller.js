@@ -49,17 +49,14 @@ const addUser = async (req, res)=>{
 
 }
 
-
-
-
-const upDateUser = async(body)=>{
+const upDateUser = async(req, res)=>{
     
     let connect = await connectMongo()
-    let {id} = body
+    let {id} = req.body
     
     try {
         
-        let user = await User.findByIdAndUpdate(id, body) 
+        let user = await User.findByIdAndUpdate(id, req.body) 
         
         if (!user) { // Verifica se o usuario não existe.
             console.log("Usuario não encontrado")    
@@ -67,7 +64,7 @@ const upDateUser = async(body)=>{
         }
         
         let userAtt = await User.findById(id)
-        return userAtt
+        return res.status(200).json(userAtt)
         
     } catch (error) {
         return error
