@@ -9,28 +9,6 @@ async function connectMongo(){
     
 }
 
-const addUser = async (user)=>{
-    // console.log(user)
-    
-    let {name} = user // desestruturacao para pegar o campo NAME.
-    let connect = await connectMongo()
-
-    try { // verifica se já existe o usuario.
-        let pesquisaUser = await User.findOne({name:name})
-        console.log('existe: ', pesquisaUser)
-        
-        if(!pesquisaUser){ //caso nao exista o usuario.
-            let newUser = await User.create(user)
-            console.log('criado o usuario: ', newUser)
-            return newUser
-        }
-        return pesquisaUser
-
-    } catch (error) {
-        return error
-    }
-
-}
 
 
 const findUser = async (id)=>{
