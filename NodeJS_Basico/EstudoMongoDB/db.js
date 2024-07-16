@@ -10,37 +10,6 @@ async function connectMongo(){
 }
 
 
-
-const findUser = async (id)=>{
-    
-    let connect = await connectMongo()
-    let user = await User.findById(id)
-    
-    return user
-}
-
-const upDateUser = async(body)=>{
-    
-    let connect = await connectMongo()
-    let {id} = body
-    
-    try {
-        
-        let user = await User.findByIdAndUpdate(id, body) 
-        
-        if (!user) { // Verifica se o usuario não existe.
-            console.log("Usuario não encontrado")    
-            return user.message    
-        }
-        
-        let userAtt = await User.findById(id)
-        return userAtt
-        
-    } catch (error) {
-        return error
-    }
-}
-
 const deleteUser = async(id)=>{
 
     let connect = await connectMongo()
