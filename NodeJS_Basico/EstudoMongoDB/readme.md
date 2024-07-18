@@ -1,22 +1,31 @@
-# Como adicionar a dependencia
+# Definição deste projeto:
+ - Este projeto trata-se apenas de um backend NEM(Node.js,Express, MongoDB).
+ - Contendo apenas um simples CRUD(Create, Read, UpDate e Delete), retornando dados em JSON.
+ - Seguindo estruturas padrões(Router, Model, Controller).
 
-Para trabalhar com banco de dados MongoDB, primeira sera necessario instalar as dependencia.
+## Bibliotecas usadas:
+- Express e Router.
+- MongoDB e Mongoose.
+
+#### Oque é MongoDB:
+- MongoDB é um banco NoSQL, ele acaba guardando os dados em uma estrutura parecida com um JSON e por isso sua estrutura pode ser muito variada.
+
+- Poderá se informar mais lendo a documentação do mongoose: https://mongoosejs.com/
+
+#### Como adicionar a dependencia:
+- Para operar com banco de dados MongoDB, primeira sera necessario instalar as dependencia.
 ```
-- npm install mongodb
+    - npm install mongodb
 ```
 
-# Como configurar: 
+#### Como configurar: 
 
-## Podera ler mais a respeito no site do NPM contendo a documentacao da biblioteca
-- https://www.npmjs.com/package/mongodb
+- Podera ler mais a respeito no site do NPM contendo a documentacao da biblioteca https://www.npmjs.com/package/mongodb
 
 
-Sera necessario adicionar as biblitecas no projeto:
-``` 
-    import mongodb, {MongoClient} from 'mongodb' 
-``` 
+- Sera necessario adicionar as biblitecas no projeto:  ``` import mongodb, {MongoClient} from 'mongodb' ``` 
 
-# Conectando com o base do MongoDB que esta em nuvem:
+#### Conectando com o base do MongoDB que esta em nuvem:
 
 ````
 const urlMongo = "mongodb+srv://jonasmdcarvalho:Nodejs@estudonodejs.jg2bdpr.mongodb.net/?retryWrites=true&w=majority&appName=EstudoNodeJs"
@@ -31,23 +40,18 @@ async function connectMongo(){
 }
 ````
 
-# Adicionando Mongoose 8.0.0
-Mongoose é uma biblioteca com o função de simplifcar a intereção do MongoDB, pois ele é banco NoSQL, ele acaba guardando os dados como um JSON e por isso sua estrutura pode ser muito variada.
+## Adicionando Mongoose 8.0.0
+-   Mongoose é uma biblioteca ORM com o função de simplifcar a intereção com o banco do MongoDB.
 
-Poderá se informar mais lendo a documentação do mongoose:
-- https://mongoosejs.com/
+- add a biblioteca: ``` - npm install mongoose ```
 
-add a biblioteca:
-``` - npm install mongoose ```
-
-add a importação da biblioteca:
-``` - import mongosse from 'mongoose' ```
+- add a importação da biblioteca: ``` - import mongosse from 'mongoose' ```
 
 
-Ao se comunicar com bancos sera muito utilizado funcoes assincronas, promisses etc, devido 
-haver consultas no banco.
+- Ao se comunicar com bancos sera muito utilizado funções assincronas, promisses etc, devido 
+haver consultas no banco e elas poderem levar alguns tempo para serem concluidas.
 
-Quando utilizar rotas com metodos assincronos precisará definir a rota como assincrona tbm.
+- Quando utilizar rotas com metodos assincronos precisará definir a rota como assincrona tbm.
 ```
 app.get("/allClients", async (req,res)=>{
     
@@ -55,3 +59,4 @@ app.get("/allClients", async (req,res)=>{
     res.json(clientes)
 })
 ```
+
