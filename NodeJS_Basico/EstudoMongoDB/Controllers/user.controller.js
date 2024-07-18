@@ -71,10 +71,11 @@ const upDateUser = async(req, res)=>{
     }
 }
 
-const deleteUser = async(id)=>{
+const deleteUser = async(req, res)=>{
 
+    let {id} = req.params
     let connect = await connectMongo()
-    
+
     try {
         let user = await User.findByIdAndDelete(id)
         
@@ -82,11 +83,11 @@ const deleteUser = async(id)=>{
             return user.message    
         }    
         
-        let users = await User.find()
-        return users
+        let users = await User.findById(id)
+        return res.status(200).json(users)
 
     } catch (error) {
-        return error
+        return res.status(500).json({message: error.message})
     }
 
 }
