@@ -8,6 +8,9 @@ server.listen(3030, console.log(console.log('Servidor ativo!!🚀 \nPara desativ
 import { fastify } from "fastify"; 
 
 const server = fastify()
-server.listen({
-    port:3035
-},console.log('Servidor ativo!!🚀 \nPara desativar Ctrl+C'))
+
+server.get('/',()=>{
+    return 'Rota GET'
+})
+
+server.listen({port:3035},console.log('Servidor ativo!!🚀 \nPara desativar Ctrl+C'))
