@@ -6,6 +6,7 @@ server.listen(3030, console.log(console.log('Servidor ativo!!🚀 \nPara desativ
 */
 
 import { fastify } from "fastify"; 
+import { databaseMoemory } from "./database_memory.js";
 
 const server = fastify()
 
