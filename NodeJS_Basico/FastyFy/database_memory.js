@@ -17,7 +17,19 @@ export class databaseMoemory {
     }
     
     list(){
-        return Array.from(this.#videos.values()) //Convertendo o VALUES em um Array.
+       
+        // return Array.from(this.#videos.values()) //Convertendo o VALUES em um Array.
+        
+       return Array.from(this.#videos.entries()).map((videoArrey)=>{
+
+        //Convertendo o VALUES em um Array.
+        const id = videoArrey[0]
+        const data = videoArrey[1]
+        return {
+            id,
+            ...data,
+        }
+       })
     }
     
     
