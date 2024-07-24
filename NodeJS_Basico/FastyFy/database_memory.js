@@ -17,7 +17,7 @@ export class databaseMoemory {
     }
     
     list(){
-        this.#videos.values()
+        return Array.from(this.#videos.values()) //Convertendo o VALUES em um Array.
     }
     
     
