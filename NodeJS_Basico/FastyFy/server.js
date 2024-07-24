@@ -9,9 +9,26 @@ import { fastify } from "fastify";
 import { databaseMoemory } from "./database_memory.js";
 
 const server = fastify()
+const database = new databaseMoemory()
 
-server.get('/',()=>{
-    return 'Rota GET'
+server.post('/videos',(req, res)=>{
+
+    let {title, description, duration} = req.body
+
+    database.create({
+        title,
+        description,
+        duration,
+    })
+    console.log("Put: ",database.list())
+
+    return res.status(201).send()
+})
+
+server.get('/allvideos',()=>{
+    let videos = database.list()
+    console.log('Get: ',videos)
+    return videos
 })
 
 server.listen({port:3035},console.log('Servidor ativo!!🚀 \nPara desativar Ctrl+C'))
