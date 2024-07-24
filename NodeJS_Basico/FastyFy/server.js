@@ -45,4 +45,11 @@ server.get('/allvideos',()=>{
     return videos
 })
 
+server.delete('/video/:id', (req, res)=>{
+    let {id} = req.params
+    database.delete(id)
+
+    return res.status(204).send()
+})
+
 server.listen({port:3035},console.log('Servidor ativo!!🚀 \nPara desativar Ctrl+C'))
