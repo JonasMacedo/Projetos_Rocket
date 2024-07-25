@@ -1,10 +1,10 @@
-Criando servidor com CRUD simples usado o FastiFy.
-
+# Sobre este projeto:
+Servidor com CRUD simples usado o FastiFy.
 O FastiFy trata-se de um micro framework similar ao Express.
 
 
-## Banco de dados na memoria local.
-O "database-memory" ira guardar os aquivos na memoria local, da maquina apenas para facilitar os testes iniciais da aplicação.
+### Banco de dados na memoria local.
+O "***database-memory***" ira guardar os aquivos na memoria local, da maquina apenas para facilitar os testes iniciais da aplicação.
 
 #### Ajuste de Array:
 - o Entries retorna um array com diversos objetos no seu interior.
@@ -13,3 +13,9 @@ O "database-memory" ira guardar os aquivos na memoria local, da maquina apenas p
 - na imagem estamos pegando o Id que esta na primera posição do array retornado do Entries.
 - em seguida o restante da informação.
 - e por ultimo retornando da função, todas as informações o Id e com o spread as informações restantes do array.
+
+### Banco de dados PostGres
+
+O banco usado para esta aplicação sera o Postgres, será usado uma versão online da ***Neon*** podera saber mais ou aderir no site:
+- https://neon.tech
+
