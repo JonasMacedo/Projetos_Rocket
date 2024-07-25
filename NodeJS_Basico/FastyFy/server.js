@@ -6,21 +6,24 @@ server.listen(3030, console.log(console.log('Servidor ativo!!🚀 \nPara desativ
 */
 
 import { fastify } from "fastify"; 
-import { databaseMoemory } from "./database_memory.js";
+// import { databaseMoemory } from "./database_memory.js";
+import { databasePostgres } from './database_postgres.js'
 
 const server = fastify()
-const database = new databaseMoemory()
 
-server.post('/videos',(req, res)=>{
+// const database = new databaseMoemory()
+ const database = new databasePostgres()
+
+server.post('/videos', async (req, res)=>{
 
     let {title, description, duration} = req.body
 
-    database.create({
+    await database.create({
         title,
         description,
         duration,
     })
-    console.log("Put: ",database.list())
+    console.log("Put: ", database.list())
 
     return res.status(201).send()
 })
@@ -39,8 +42,9 @@ server.put('/video/:id',(req, res)=>{
     return res.status(204).send()
 })
 
-server.get('/allvideos',()=>{
-    let videos = database.list()
+server.get('/allvideos', async (req)=>{
+    let {search} = req.query
+    let videos = await database.list(search)
     console.log('Get: ',videos)
     return videos
 })
