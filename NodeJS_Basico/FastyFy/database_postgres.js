@@ -17,8 +17,9 @@ export class databasePostgres {
         await sql`UPDATE videos SET title=${title}, description = ${description}, duration = ${duration} WHERE ID=${id}`
     }
     
-    delete(id){
+    async delete(id){
         
+        await sql`DELETE FROM videos WHERE ID=${id}`
     }
     
     async list(search){
