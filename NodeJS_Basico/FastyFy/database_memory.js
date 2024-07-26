@@ -1,3 +1,9 @@
+
+/* 
+    Esta configuração salvará as informações localmente na maquina.
+    Ao reiniciar a maquina ou a aplicação, os dados serao resetados.
+*/
+
 import {randomUUID} from "node:crypto"
 
 export class databaseMoemory {
@@ -18,7 +24,7 @@ export class databaseMoemory {
     
     list(){
        
-        // return Array.from(this.#videos.values()) //Convertendo o VALUES em um Array.
+       // return Array.from(this.#videos.values()) //Convertendo o VALUES em um Array.
         
        return Array.from(this.#videos.entries()).map((videoArrey)=>{
 
