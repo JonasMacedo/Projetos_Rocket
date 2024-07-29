@@ -4,7 +4,8 @@ O FastiFy trata-se de um micro framework similar ao Express.
 
 
 ### Banco de dados na memoria local.
-O "***database-memory***" ira guardar os aquivos na memoria local, da maquina apenas para facilitar os testes iniciais da aplicação.
+O "***database-memory***" ira guardar os aquivos na memoria local da maquina, apenas para facilitar os testes iniciais da aplicação.
+Conforme o servidor for avançando sera substituido pelo banco de dados.
 
 #### Ajuste de Array:
 - o Entries retorna um array com diversos objetos no seu interior.
@@ -18,4 +19,6 @@ O "***database-memory***" ira guardar os aquivos na memoria local, da maquina ap
 
 O banco usado para esta aplicação sera o Postgres, será usado uma versão online da ***Neon*** podera saber mais ou aderir no site:
 - https://neon.tech
+
+Foi criado o arquivo "**createTable.js**" com a definição da tabela, bastando apenas rodar o comando "**node createTable.js**".
 
