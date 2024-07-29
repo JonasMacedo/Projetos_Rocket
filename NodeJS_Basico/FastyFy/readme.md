@@ -1,6 +1,11 @@
 # Sobre este projeto:
 Servidor com CRUD simples usado o FastiFy.
 O FastiFy trata-se de um micro framework similar ao Express.
+- Ele oferece uma abordagem leve e eficiente pra lidar com requisições HTTP.
+- Possui um sistema de roteamente flexivel e simples de usar.
+- É muito conhecido por sua velocidade e baixo consumo de recursos.
+- Possui suporte nativo para "***TypeScript***" facilitando o desenvolvimento de APIs com essa linguagem.
+- Possui arquitetura modular permitindo adicionar plugins para estender suas funcionalidades.
 
 
 ### Banco de dados na memoria local.
