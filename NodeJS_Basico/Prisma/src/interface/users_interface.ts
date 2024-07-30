@@ -4,7 +4,7 @@ export interface User{
     name: string,
 }
 
-interface UserCreate {
+export interface UserCreate {
     email: string,
     name: string,
 }
