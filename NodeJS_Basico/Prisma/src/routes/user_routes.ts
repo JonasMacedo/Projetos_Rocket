@@ -2,14 +2,14 @@ import { FastifyInstance } from "fastify";
 import { UserUseCase } from "../usecases/user_usecase";
 import { UserCreate } from "../interface/users_interface";
 
-export function userRoutes(fastify: FastifyInstance){
+export async function userRoutes(fastify: FastifyInstance){
     
     const useCase = new UserUseCase()
     
-    fastify.post<{Body: UserCreate}>('/',(req,res)=>{
+    fastify.post<{Body: UserCreate}>('/', async(req,res)=>{
         let {name, email} = req.body
         try {
-            const data = useCase.create({
+            const data = await useCase.create({
                 name,
                 email,
             })
@@ -17,6 +17,10 @@ export function userRoutes(fastify: FastifyInstance){
         } catch (error) {
             res.send(error)
         }
+    })
+
+    fastify.get('/',(req,res)=>{
+        res.send({hello:'world'})
     })
 }
 
