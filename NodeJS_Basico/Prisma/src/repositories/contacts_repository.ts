@@ -1,5 +1,5 @@
 import { Prisma } from "@prisma/client";
-import { Contact, ContactCreate, ContactCreateData, ContactRepository } from "../interface/contats_intefaces";
+import { Contact, ContactCreateData, ContactRepository } from "../interface/contats_intefaces";
 import { prisma } from "../database/prisma_client";
 
 class ContactsRepositoryPrisma implements ContactRepository {
@@ -19,7 +19,7 @@ class ContactsRepositoryPrisma implements ContactRepository {
     async findByEmailOrPhone(email:string, phone: string): Promise<Contact | null>{
         const result = await prisma.contacts.findFirst({
             where:{
-                OR:[{email,},{phone}]
+                OR:[{email},{phone}]
             },
         })
         return result || null
