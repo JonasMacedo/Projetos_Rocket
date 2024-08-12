@@ -7,7 +7,6 @@ export interface Contact {
 }
 
 export interface ContactCreate {
-    id: string,
     name: string,
     email: string,
     phone: string, 
@@ -15,7 +14,6 @@ export interface ContactCreate {
 }
 
 export interface ContactCreateData {
-    id: string,
     name: string,
     email: string,
     phone: string, 
