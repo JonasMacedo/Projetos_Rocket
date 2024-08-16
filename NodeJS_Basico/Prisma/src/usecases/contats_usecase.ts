@@ -36,6 +36,17 @@ class ContactUseCase{
         return contact
     }
 
+    async listAllContacts( userEmail: string){
+        
+        let user = await this.userRepository.findByEmail(userEmail)
+        
+        if (!user) {
+            throw new Error("User not found");            
+        }
+
+        const contacts = await this.contactRepository.findAllContacts(user.id)
+    }
+
 }
 
 export {ContactUseCase}
