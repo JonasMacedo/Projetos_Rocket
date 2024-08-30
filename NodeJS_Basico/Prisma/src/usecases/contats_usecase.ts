@@ -36,7 +36,7 @@ class ContactUseCase{
         return contact
     }
 
-    async listAllContacts( userEmail: string){
+    async listAllContacts(userEmail: string){
         
         let user = await this.userRepository.findByEmail(userEmail)
         
