@@ -45,6 +45,8 @@ class ContactUseCase{
         }
 
         const contacts = await this.contactRepository.findAllContacts(user.id)
+
+        return contacts
     }
 
 }
