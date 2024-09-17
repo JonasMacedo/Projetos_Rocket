@@ -29,7 +29,7 @@ export async function ContactRoutes(fastify: FastifyInstance){
     fastify.get('/', async (req,res)=>{
         let emailUser = req.headers['email']
         try {
-            let data = await ContactUseCase.listAllContacts(emailUser)
+            let data = await useContact.listAllContacts(emailUser)
             return res.send(data)
         } catch (error) {
             res.send(error)
