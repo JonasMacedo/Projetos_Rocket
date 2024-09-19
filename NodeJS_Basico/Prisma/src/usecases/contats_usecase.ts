@@ -59,6 +59,11 @@ class ContactUseCase{
         return data
     }
 
+    async deleteContact(id: string){
+        let data = await this.contactRepository.deleteContact(id)
+        return data
+    }
+
 }
 
 export {ContactUseCase}
