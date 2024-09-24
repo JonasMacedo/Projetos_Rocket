@@ -16,3 +16,9 @@ app.get("/allClients", async (req,res)=>{
     res.json(clientes)
 })
 
+Instalando dependencia do JWT no projeto.
+- npm i jsonwebtoken
+
+O JWT é um método que representa a comunicação segura entre duas partes. 
+Esse token é composto por três partes: cabeçalho, carga útil e assinatura.
+Elas são separadas por “.”

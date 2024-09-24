@@ -1,7 +1,10 @@
 import express from 'express'
+import jsonwebtoken from 'jsonwebtoken'
+
 import { allClients, addClient, updateClient, deletClient } from '../database/db.js' 
 
 const route = express.Router()
+const jwt = jsonwebtoken
 
 route.get("/",(req,res)=>{
     res.status(200).send('Pagina Home')
