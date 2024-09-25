@@ -1,10 +1,11 @@
-import express from 'express'
+import express, { json } from 'express'
 import jsonwebtoken from 'jsonwebtoken'
 
 import { allClients, addClient, updateClient, deletClient } from '../database/db.js' 
 
 const route = express.Router()
-const jwt = jsonwebtoken
+const jwt = jsonwebtoken 
+const SECRET = 'jwtSecret'
 
 route.get("/",(req,res)=>{
     res.status(200).send('Pagina Home')
@@ -52,6 +53,21 @@ route.delete("/deletClient", async (req,res)=>{
     }else{
         await deletClient(iD)
         res.json(`Cliente ${iD} Removido`);
+    }
+    
+})
+
+route.post("/login", (req, res)=>{
+    
+    if(req.body.nome === 'Amanda' && req.body.sobrenome === 'Ripple'){
+        console.log('Passou no login')
+        
+        const token = jwt.sign({userId:1}, SECRET, {expiresIn: 300}) // utilizando o JWT.
+
+        return res.status(200).json({auth:true, token})
+        
+    }else{
+        return res.status(401).send('Login não autorizado')        
     }
     
 })
