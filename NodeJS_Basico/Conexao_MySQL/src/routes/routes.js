@@ -1,5 +1,5 @@
 import express, { json } from 'express'
-import jsonwebtoken from 'jsonwebtoken'
+import jsonwebtoken, { decode } from 'jsonwebtoken'
 
 import { allClients, addClient, updateClient, deletClient } from '../database/db.js' 
 
@@ -7,12 +7,42 @@ const route = express.Router()
 const jwt = jsonwebtoken 
 const SECRET = 'jwtSecret'
 
+route.post("/login", (req, res)=>{
+    
+    if(req.body.nome === 'Amanda' && req.body.sobrenome === 'Ripple'){
+        console.log('Passou no login')
+        
+        const token = jwt.sign({userId:1}, SECRET, {expiresIn: 300}) // utilizando o JWT.
+
+        return res.status(200).json({auth:true, token})
+        
+    }else{
+        return res.status(401).send('Login não autorizado')        
+    }
+    
+})
+
+function verifyJWT(req, res, next){ // A funcao irá funcionar como um Middleware.
+
+    // Ira verificar o JWT 
+    const token = req.headers['x-access-token']
+    jwt.verify(token, SECRET,(err, decoded)=>{
+        
+        if(err) return res.status(401).send('Não antenticado').end()
+        
+        req.userId = decoded.userId
+        next()
+    })
+}
+
 route.get("/",(req,res)=>{
     res.status(200).send('Pagina Home')
 })
 
-route.get("/allClients", async (req,res)=>{
+route.get("/allClients", verifyJWT, async (req,res)=>{ // Addicionado o Middleware do JWT.
     
+    console.log(req.userId+'Fez esta chamada!')
+
     const clientes = await allClients()
     
     console.log(clientes)
@@ -57,19 +87,6 @@ route.delete("/deletClient", async (req,res)=>{
     
 })
 
-route.post("/login", (req, res)=>{
-    
-    if(req.body.nome === 'Amanda' && req.body.sobrenome === 'Ripple'){
-        console.log('Passou no login')
-        
-        const token = jwt.sign({userId:1}, SECRET, {expiresIn: 300}) // utilizando o JWT.
 
-        return res.status(200).json({auth:true, token})
-        
-    }else{
-        return res.status(401).send('Login não autorizado')        
-    }
-    
-})
 
 export default(route)
