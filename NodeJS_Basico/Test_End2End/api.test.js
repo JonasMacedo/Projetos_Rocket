@@ -17,7 +17,7 @@ describe('API WorkFlow', ()=>{
     it('Recebido usuario e senha nao autorizado', async()=>{
         const data = {
             user: 'Jonas',
-            password: ' ',
+            password: '',
         }
         
         const request = await fetch(`${BASE_URL}/login`, {

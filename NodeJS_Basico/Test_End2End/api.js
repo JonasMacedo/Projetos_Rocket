@@ -12,6 +12,8 @@ async function loginRouter(req, res){
     console.log({user, password})
     if(user !== DEFAULT_USER.user || password !== DEFAULT_USER.password ){
         res.writeHead(401)
+        res.end(JSON.stringify({error: 'usuario invalido!!'}))
+        return;
     }
     res.end('ok')
 }
@@ -20,7 +22,7 @@ async function handler(req, res) {
     
     if(req.url ==='/login' && req.method === 'POST'){
         return loginRouter(req,res)
-    }
+    } 
 
     res.end("Handler ativo")    
 }
