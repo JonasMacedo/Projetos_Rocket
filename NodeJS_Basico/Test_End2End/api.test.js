@@ -64,5 +64,19 @@ describe('API WorkFlow', ()=>{
         const response = await request.json()
         deepStrictEqual(response, {error:'Token invalido!!'})                
     })
+    
+    it('Devera permitir o acesso a usuario validado pelo JWT!!', async()=>{
+        
+        const request = await fetch(`${BASE_URL}/`, {
+            method: 'GET',
+            headers:{
+                authorization: _globalToken
+            }
+        })
+        
+        strictEqual(request.status, 200)
+        const response = await request.json()
+        deepStrictEqual(response, {result: "Bem Vindo!"})                
+    })
 
 })
