@@ -48,6 +48,7 @@ describe('API WorkFlow', ()=>{
         const response = await request.json()
         // console.log({response} // para ver o Token gerado.
         ok(response.token, 'Token precisa ser apresentado.')
+        _globalToken = response.token // atribuindo token JWT.
     })
     
     it('Devera restringir o acesso a usuario ñ validado pelo JWT!!', async()=>{
