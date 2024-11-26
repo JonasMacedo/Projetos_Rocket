@@ -5,6 +5,7 @@ const BASE_URL = 'http://localhost:3035'
 
 describe('API WorkFlow', ()=>{
     let _server = {}
+    let _globalToken = ''
 
     before(async ()=>{
         //import dinamico
@@ -30,8 +31,8 @@ describe('API WorkFlow', ()=>{
         const response = await request.json()
         deepStrictEqual(response, {error:'usuario invalido!!'})
     })
-
-    it('Devera receber Usuario ñ validado pelo JWT!', async()=>{
+    
+    it('Devera receber um usuario validado pelo JWT!', async()=>{
         const data = {
             user: 'Jonas',
             password: '123',
@@ -43,10 +44,24 @@ describe('API WorkFlow', ()=>{
         })
         
         strictEqual(request.status, 200)
-
+        
         const response = await request.json()
         // console.log({response} // para ver o Token gerado.
         ok(response.token, 'Token precisa ser apresentado.')
+    })
+    
+    it('Devera restringir o acesso a usuario ñ validado pelo JWT!!', async()=>{
+        
+        const request = await fetch(`${BASE_URL}/`, {
+            method: 'GET',
+            headers:{
+                authorization: ''
+            }
+        })
+        
+        strictEqual(request.status, 400)
+        const response = await request.json()
+        deepStrictEqual(response, {error:'Token invalido!!'})                
     })
 
 })
