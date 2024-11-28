@@ -1,8 +1,5 @@
-import express from 'express'
-import mongoose from "mongoose";
-
 import User from "../Models/users.js"
-import { connectMongo } from "../db.js"
+import { connectMongo } from "../Database/db.js"
 
 const allUsers = async (req, res)=>{
     
