@@ -1,9 +1,11 @@
 import { PrismaClient} from '@prisma/client'
 import bcrypt from 'bcrypt'
+import jwt from 'jsonwebtoken'
 
 import { connectMongo } from '../Database/db.js'
 
 const prisma = new PrismaClient() 
+const JWT_SECRET = process.env.JWT_SECRET // para poder criar o token JWT.
 
 const createUsers = async (req, res) => {
    
@@ -64,7 +66,10 @@ const loginUser = async (req, res)=>{
             return res.status(400).json({message: 'Senha invalida!'})
         }
 
-        return res.status(200).json(userLogin)
+        // gerando o JWT
+        const token = jwt.sign({id:userInfo.id}, JWT_SECRET, {expiresIn: '1m'})
+
+        return res.status(200).json(token)
 
     } catch (error) {
         return res.status(500).json({message:'Erro no servidor, tente novamente'})        
