@@ -49,11 +49,19 @@ const loginUser = async (req, res)=>{
     
     try {
         
+        //O prisma busca o usuario no MongoDB.
         let userLogin = await prisma.users.findUnique({where: {email:userInfo.email}})
         console.log("UserLogin: \n", userLogin)
         
-        if (!userLogin) {
+        if (!userLogin) { // verifica se o usuario existe
             return res.status(400).json({message: 'Usuario não encontrado'})
+        }
+        
+        // verifica a senha digitada com a do banco.
+        const verifyPassword = await bcrypt.compare(userInfo.password, userLogin.password)
+        
+        if (!verifyPassword) {
+            return res.status(400).json({message: 'Senha invalida!'})
         }
 
         return res.status(200).json(userLogin)
