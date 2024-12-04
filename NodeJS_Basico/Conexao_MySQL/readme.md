@@ -36,21 +36,21 @@ Elas são separadas por “.”
 - Carga Util(Payload) 
     - Os payloads são objetos JSON que contem os ***claims***, nessa parte que nós trabalhamos com os “pedidos”, carga de dados ou dados enviados. 
     - Existem 3 tipos de claims em Payloads: ***reserved***, ***public***, e ***private claims***.
-    - Reserved claims: Atributos não obrigatórios(mas recomendados) que podem ser um conjunto de informações uteis e interoperáveis normalmente utilizados por protocolos de segurança em API’s:
+        - Reserved claims: Atributos não obrigatórios(mas recomendados) que podem ser um conjunto de informações uteis e interoperáveis normalmente utilizados por protocolos de segurança em API’s:
 
-- “iss” (Issuer) Origem do token
+        - “iss” (Issuer) Origem do token
 
-- “iat” (issueAt) Timestamp de quando o token foi gerado
+        - “iat” (issueAt) Timestamp de quando o token foi gerado
 
-- “exp” (Expiration) Timestamp de quando o token expira
+        - “exp” (Expiration) Timestamp de quando o token expira
 
-- “sub” (Subject) Entidade a quem o token pertence, normalmente o ID do usuário
+        - “sub” (Subject) Entidade a quem o token pertence, normalmente o ID do usuário
 
-- Public claims: São atributos que definem o uso do JWT e informações úteis para 
-a aplicação.
+        - Public claims: São atributos que definem o uso do JWT e informações úteis para 
+        a aplicação.
 
-- Private claims: São atributos definidos especialmente para compartilhar 
-informações entre aplicações.
+        - Private claims: São atributos definidos especialmente para compartilhar 
+        informações entre aplicações.
 
 ### Links de leitura:
 https://www.alura.com.br/artigos/o-que-e-json-web-tokens?srsltid=AfmBOorXHwPg5lYnNl05QMHl6G_fzKCFw6HUtUXIkKxwahanFCqUaZ_I
