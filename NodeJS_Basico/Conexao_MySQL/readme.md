@@ -36,6 +36,7 @@ Elas são separadas por “.”
 - Carga Util(Payload) 
     - Os payloads são objetos JSON que contem os ***claims***, nessa parte que nós trabalhamos com os “pedidos”, carga de dados ou dados enviados. 
     - Existem 3 tipos de claims em Payloads: ***reserved***, ***public***, e ***private claims***.
+    
         - Reserved claims: Atributos não obrigatórios(mas recomendados) que podem ser um conjunto de informações uteis e interoperáveis normalmente utilizados por protocolos de segurança em API’s:
 
         - “iss” (Issuer) Origem do token
