@@ -44,22 +44,22 @@ const createUsers = async (req, res) => {
 
 const loginUser = async (req, res)=>{
     
-    console.log("rota login: \n", req.body)
+    console.log("rota Login, parametros: \n", req.body)
     let userInfo = req.body
     
     try {
         
-        let findUser = await prisma.users.findOne({email: userInfo.email})
-        console.log("rota login: \n", findUser)
+        let userLogin = await prisma.users.findUnique({where: {email:userInfo.email}})
+        console.log("UserLogin: \n", userLogin)
         
-        if (!findUser) {
+        if (!userLogin) {
             return res.status(400).json({message: 'Usuario não encontrado'})
         }
 
-        return res.status(200).json(findUser)
+        return res.status(200).json(userLogin)
 
     } catch (error) {
-        return res.status(500).json(error)        
+        return res.status(500).json({message:'Erro no servidor, tente novamente'})        
     }
 
 
