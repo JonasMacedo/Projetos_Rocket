@@ -78,4 +78,17 @@ const loginUser = async (req, res)=>{
 
 }
 
-export {createUsers, loginUser}
+const listusers = async(req, res)=>{
+
+    try {
+        const user = await prisma.users.findMany()
+
+        res.status(200).json({message:"Usuarios listados com sucesso!",user})
+    } catch (error) {
+        res.status(400).json({message:"Falha na listagem de usuarios"})
+    }
+
+
+}
+
+export {createUsers, loginUser, listusers}
