@@ -14,13 +14,13 @@ const auth = (req, res, next) =>{ // metodo de middlewares do NextJs.
     const decoded = token.replace('Bearer ','') 
     console.log("token decodificado: ", decoded)
     
-    //jwt.verify(token.replace('Bearer ',''), jwt.JWT_SECRET)
-    
-    // try {
-
-    // } catch (error) {
-    //     return res.status(401).json({messagem:"Token Invalido."})
-    // }
+    try {
+        let newToken = jwt.verify(decoded, JWT_SECRET)
+        console.log('Novo token:', newToken)
+        next()
+    } catch (error) {
+        return res.status(401).json({messagem:"Token Invalido.", error})
+    }
 
     next()
 } 
