@@ -1,14 +1,28 @@
 import { Link } from "react-router-dom"
 import {useRef} from "react"
 
+import api from "../../services/api.js"
+
 function Cadastro() {
 
     const nameRef = useRef() // Verificar o uso de React Hoock Form, mais eficaz que useRef.
     const emailRef = useRef()
     const passwordRef = useRef()
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault()
+
+        try {
+            await api.post('/createuser', { 
+                name: nameRef.current.value,
+                email: emailRef.current.value,
+                password: passwordRef.current.value
+            })
+            alert("Usuario cadastrado com Sucesso!!")
+        } catch (error) {
+            alert("Erro ao cadastrar usuario")            
+        }
+
         console.log(nameRef.current.value, emailRef.current.value, passwordRef.current.value)
     }
 
