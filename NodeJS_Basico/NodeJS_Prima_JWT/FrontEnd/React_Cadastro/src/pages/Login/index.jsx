@@ -8,6 +8,16 @@ function Login(){
 
     async function handleSubmit(event) {
         event.preventDefault()
+
+        try {
+            await api.post('./api/login', {
+                email: emailRef.current.value,
+                password: passwordRef.current.value,
+            })
+        } catch (error) {
+            alert("Senha ou email incorretos")
+        }
+
     }
 
     return(
