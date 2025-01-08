@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import {useRef} from "react"
 
 import api from "../../services/api.js"
@@ -7,7 +7,7 @@ function Login(){
 
     const emailRef= useRef()
     const passwordRef= useRef()
-
+    const navigate = useNavigate()
 
     async function handleSubmit(event) {
         event.preventDefault()
@@ -24,6 +24,9 @@ function Login(){
             localStorage.setItem('token', token)
 
             alert("Login Ok")
+
+            navigate('/listusers')
+
         } catch (error) {
             alert("Senha ou email incorretos")
         }
