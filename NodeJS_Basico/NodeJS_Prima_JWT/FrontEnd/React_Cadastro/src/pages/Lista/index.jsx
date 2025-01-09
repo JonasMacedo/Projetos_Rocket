@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 import api from "../../services/api"
 
@@ -34,6 +35,9 @@ function ListUsers() {
                     </li>
                 ))}
             </ul>
+            <Link to='/login'>
+                <button className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-400 mt-5">Voltar para Login </button>
+            </Link>
         </div>
     )
     
