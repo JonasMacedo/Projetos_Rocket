@@ -1,8 +1,17 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Sobre este projeto:
+Um cadastro de usuario simples, usando o Reacket, NodeJS, Prisma e MongoDb.
 
-Currently, two official plugins are available:
+## Pagina de Cadastro:
+Um cadastro de usuario simples, usando o Reacket, NodeJS, Prisma e MongoDb.
+<img src='./src/assets/Screenshot_122.png'>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Pagina de Login:
+Todos os usuarios cadastrados estão no base de dados do MongoDb, no processo foi usado biblioteca JWT e Prisma.
+<img src='./src/assets/Screenshot_121.png'>
+
+## Pagina de Listagem de Usuários:
+Todos os usuarios listados estão sendo buscasdos direto da base do MongoDb.
+<img src='./src/assets/Screenshot_123.png'>
+
+Conteudo disponivel no link: https://www.youtube.com/watch?v=3u6RRDhasCY&t=150s
