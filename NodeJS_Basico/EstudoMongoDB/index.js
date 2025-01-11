@@ -9,4 +9,4 @@ app.use(express.urlencoded({extended:false})) // Para que o receba formularios p
 
 app.use('/api', routerUser)
 
-app.listen(3035, ()=>{console.log('Servidor ativo!!🚀 \nPara desativar Ctrl+C')})
+app.listen(3035, ()=>{console.log('Servidor ativo!!🚀 \nPara desativar Ctrl+C')})       
