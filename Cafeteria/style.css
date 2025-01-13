@@ -12,6 +12,7 @@
     padding: 0;        
     box-sizing: border-box;
     text-decoration: none;
+    font-family: "Roboto", serif;
 }
 
 .caixa_video{
@@ -69,6 +70,7 @@ section{
     margin: 0 1rem; 
     font-size: 1.8rem;
     color: #fff;
+    transition: 0.3s linear;
 }
 
 .header section nave a:hover{
