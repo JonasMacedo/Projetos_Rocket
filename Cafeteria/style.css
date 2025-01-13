@@ -78,3 +78,90 @@ section{
     border-bottom: 0.1rem solid var(--main-color);
     padding-bottom: 0.5rem;
 }
+
+.container_main{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.container_main div{
+    max-width: 60rem;
+}
+
+.container_main div h3{
+    color: #fff;
+    font-size: 6rem;
+    text-transform: uppercase;
+}
+
+.container_main div p{
+    font-size: 2rem;
+    color: #fff;
+    font-weight: lighter;
+    padding: 1rem 0;
+    line-height: 1.8rem;
+}
+
+.botao_link{
+    display: inline-block;
+    background-color: var(--main-color);
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+    color: #fff;
+    padding: 1rem 3rem;
+    border: none;
+    transition: 0.3s linear;
+}
+
+.botao_link:hover{
+    letter-spacing:  0.1rem;
+}
+
+.container_about h2{
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 3.5rem;
+    font-size: 4rem;
+}
+
+.container_about h2 span{
+    color: var(--main-color);
+}
+
+.container_about .about_container{
+    display: flex;
+    align-items: center;
+    background-color: var(--black);
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.container_about .about_container .about_container_img{
+    flex: 1 1 45rem;        
+}
+
+.container_about .about_container .about_container_img img {
+    width: 100%;
+}
+
+.container_about .about_container .about_text{
+    flex: 1 1 45rem;
+    padding: 2rem;
+}
+
+.container_about .about_container .about_text h3{
+    font-size: 3rem;
+    color: #fff;
+}
+
+.container_about .about_container .about_text p{
+    font-size: 1.5rem;
+    font-weight: lighter;
+    color: #fff;
+    line-height: 1.8;
+    padding: 1rem 0;
+}
+
