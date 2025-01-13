@@ -34,7 +34,7 @@
     width: 100%;
     position: fixed;
     top: 0;
-    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.99) 85%);
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.7) 82%, rgba(10, 12, 16, 0.99) 85%);
 }
 
 section{
@@ -52,8 +52,8 @@ section{
     background-color: var(--bg);
     border-bottom:var(--border);
 }
-    
- .header section{
+
+.header section{
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -119,7 +119,7 @@ section{
     letter-spacing:  0.1rem;
 }
 
-.container_about h2{
+.titulo{
     text-align: center;
     color: #fff;
     text-transform: uppercase;
@@ -127,7 +127,7 @@ section{
     font-size: 4rem;
 }
 
-.container_about h2 span{
+.titulo span{
     color: var(--main-color);
 }
 
@@ -165,3 +165,25 @@ section{
     padding: 1rem 0;
 }
 
+.modal{
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    gap: 2rem;
+    z-index: 4;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mascara_modal{
+    visibility: hidden;
+    transition: visibility 1s linear;
+    z-index: 3;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.7) 82%, rgba(10, 12, 16, 0.99) 85%);
+}
