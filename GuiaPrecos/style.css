@@ -1,0 +1,72 @@
+:root{
+    font-size: 10px;
+    --primary-color: #3498db;
+    --secundary-color: #2ecc71;
+    --backgroud-color: #ecf0f1;
+    --text-color: #34495e;
+    --card-background: #ffff;
+    --shadow-background: rgba(0, 0, 0, 0.1);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    background-color: var(--backgroud-color);
+    color: var(--text-color);
+    padding: 20px;
+}
+
+h1{
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+form{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+form .produt_input{
+    flex-grow: 1;
+    border-radius: 15px;
+    border: 2px solid var(--primary-color);
+    padding: 1.2rem;
+    font-size: 1.6rem;
+    outline: none;
+}
+
+form .produt_input:focus{
+    box-shadow: 0 0 5px var(--primary-color) ;
+}
+
+form button{
+    padding: 1.2rem 2.5rem;
+    background-color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+    font-size: 1.6rem;
+    border-radius: 15px;
+    transition: 1s;
+}
+
+form button:hover{
+    background-color: #2980b9;
+}
+
+.product_list{
+    background-color: var(--card-background);
+    border-radius: 10px;
+    box-sizing: 0 4px 06px var(--shadow-background);
+    text-align: center;
+}
+
