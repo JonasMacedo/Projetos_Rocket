@@ -1,0 +1,24 @@
+:root{
+    font-size: 10px;
+    --primary-color: #3498db;
+    --secundary-color: #2ecc71;
+    --backgroud-color: #ecf0f1;
+    --text-color: #34495e;
+    --card-background: #ffff;
+    --shadow-background: rgba(0, 0, 0, 0.1);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    background-color: var(--backgroud-color);
+    color: var(--text-color);
+    padding: 20px;
+}
