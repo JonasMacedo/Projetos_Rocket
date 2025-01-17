@@ -64,9 +64,22 @@ form button:hover{
 }
 
 .product_list{
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    margin-bottom: 3rem;
+}
+
+.product_card{
     background-color: var(--card-background);
     border-radius: 10px;
     box-sizing: 0 4px 06px var(--shadow-background);
     text-align: center;
+    padding: 20px;
+    cursor: pointer;
 }
 
+.product_card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--shadow-background);
+}
