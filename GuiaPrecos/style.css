@@ -98,4 +98,8 @@ form button:hover{
     color: var(--primary-color);
 }
 
-.product_card p {}
+.product_card .product_price {
+    color: var(--secundary-color);
+    font-weight: bold;
+    margin-bottom: 5px;
+}

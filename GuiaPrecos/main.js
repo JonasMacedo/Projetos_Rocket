@@ -27,7 +27,7 @@ function displayItems(products){
             <div class="product_card">
                 <img src="${prod.thumbnail.replace(/\w\.jpg/gi,'W.jpg')}" alt="${prod.title}">
                 <h3>"${prod.title}"</h3>
-                <p>"${prod.price.toLocaleString('pt-br', {style:'currency', currency:'BRL',})}"</p>
+                <p class="product_price">"${prod.price.toLocaleString('pt-br', {style:'currency', currency:'BRL',})}"</p>
                 <p>"${prod.seller.nickname}"</p>
             </div>
         `).join('')
