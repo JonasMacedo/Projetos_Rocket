@@ -7,7 +7,15 @@
     <td>CSS</td>    
   </tr>
 </table>
-<div>
-  Atenção o codigo esta comentando para melhor comprenção.⚠️  
-  <br><br>
-</div>
+
+## Funcinamento:
+<p>O usuario ao passar o mouse sobre a imagem, ira subir um <strong>CARD</strong> informativo.<p>
+
+<img src='./imgs/Screenshot_13.png' alt='Antes de passar o mouse'>
+
+<p>Após passar o mouse</p>
+
+<img src='./imgs/Screenshot_14.png' alt='Após passar o mouse'>
+
+<p> Atenção o codigo esta comentando para melhor comprenção.⚠️ </p> 
+  
