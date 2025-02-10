@@ -14,6 +14,11 @@
     max-width: 384px;
 }
 
+.profile img{
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 .profile p{
     font: var(--text-md);
 }
@@ -43,4 +48,8 @@
 section .container{
     display: flex;
     justify-content: space-between;
+}
+
+.info {
+    margin-left: auto;
 }
