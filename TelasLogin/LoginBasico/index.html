@@ -1,29 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+
     <title>Login</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
-<main>
-    <form action="">
-        <legend>Teste</legend>
-        <div>
-            <input placeholder="Nome do usuario" type="text" name="" id="" required>
-            <input placeholder="Password" type="password" name="" id="" required>
-            <input type="checkbox">
-            <label for="">Lembrar</label>
-            <a href="#">Esqueceu a senha?</a>
-            <button type="submit">Entrar</button>
-            <p>Não tem conta? <a href="#">Registrar</a></p>
-        </div>
-    </form>
-</main>
+
+    <main>
+        <form action="#" class="formulario">
+            <legend>Login</legend>
+
+            <fieldset>
+                <div class="input_name">
+                    <input placeholder="Nome do usuario" type="text" name="" id="" required>
+                    <i class="bx bxs-user"></i>
+
+                </div>
+                <div class="input_pass">
+                    <input placeholder="Password" type="password" name="" id="" required>
+                    <i class="bxr bxs-lock"></i>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="remember">
+                    <label for=""><input type="checkbox">Lembrar</label>
+                    <a href="#">Esqueci minha senha?</a>
+                </div>
+
+                <button type="submit">Entrar</button>
+                
+                <div>
+                    <p>Não tem uma conta? <a href="#">Registrar</a></p>
+                </div>
+            </fieldset>
+
+        </form>
+    </main>
 
 </body>
+
 </html>
