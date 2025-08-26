@@ -43,7 +43,7 @@ fieldset{
     border: none;
 }
 
-.inputs input{
+.inputs {
     position: relative;
     margin-bottom: 25px;
 }
@@ -61,4 +61,13 @@ fieldset{
     outline: none;/* Removendo efeito de selecao */
 
     border-bottom: 1px solid #000;
+}
+
+.inputs label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: RED;
+
+    transform: translateY(18px); /* Movendo o label para o nivel da linha.*/
 }
