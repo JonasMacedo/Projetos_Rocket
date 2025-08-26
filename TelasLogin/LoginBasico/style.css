@@ -35,8 +35,8 @@ fieldset {
         radial-gradient(1px 1px at 50% 40%, #fff, transparent),
         radial-gradient(1px 1px at 70% 25%, #fff, transparent),
         radial-gradient(1.5px 1.5px at 83% 60%, #fff, transparent),
-        radial-gradient(1.5px 1.5px at 35% 75%, #fff, transparent),
-        radial-gradient(1.5px 1.5px at 90% 10%, #fff, transparent),
+        radial-gradient(1.5px 1.5px at 35% 90%, #fff, transparent),
+        radial-gradient(1.5px 1.5px at 90% 89%, #fff, transparent),
         radial-gradient(1.5px 1.5px at 5% 30%, #fff, transparent),
         radial-gradient(1.5px 1.5px at 7% 43%, #fff, transparent),
         radial-gradient(1.5px 1.5px at 49% 67%, #fff, transparent),
@@ -143,4 +143,22 @@ button{
 button:hover{
     background-color: #fff;
     transform: translateY(-5px);
+}
+
+.register {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.register a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.register  a:hover{
+    text-decoration: underline;
+    transform: translateY(-45px);
 }
