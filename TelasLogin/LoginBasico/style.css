@@ -95,3 +95,30 @@ fieldset {
     right: 20px;
     top: 18px;
 }
+
+.remember {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+.remember label{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.remember label input{
+    accent-color: rgb(127, 12, 215);
+}
+
+.remember a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.remember a:hover{
+    text-decoration: underline;
+}
