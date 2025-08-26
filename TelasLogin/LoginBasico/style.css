@@ -122,3 +122,25 @@ fieldset {
 .remember a:hover{
     text-decoration: underline;
 }
+
+button{
+    width: 100%;
+    height: 45px;
+    
+    border-radius: 10px;
+    border: none;
+    
+    outline: none;
+    cursor: pointer;
+    
+    font-size: 16px;
+    font-weight: 600;
+    color: #2a1b6b;
+    
+    transition: all 0.3s;
+}
+
+button:hover{
+    background-color: #fff;
+    transform: translateY(-5px);
+}
