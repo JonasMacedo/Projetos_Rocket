@@ -67,7 +67,18 @@ fieldset{
     position: absolute;
     top: 0;
     left: 0;
-    color: RED;
+    color: #000;
+    font-weight: 600;
 
     transform: translateY(18px); /* Movendo o label para o nivel da linha.*/
+    transition: .25s ease-in-out; /* Adicionando efeito no label */
+}
+
+input:focus{ /*Efeito na linha*/
+    border-bottom: 2px solid #26a96a;
+    box-shadow: 0 1px 0 0 #26a96a;
+}
+
+input:focus + label{ /* Efeito de subida no LABEL */
+    transform: translateY(-14px) scale(.8);
 }
