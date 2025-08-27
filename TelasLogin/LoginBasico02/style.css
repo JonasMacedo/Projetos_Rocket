@@ -12,7 +12,7 @@ body{
 
     font-family: 'Poppins';
     
-    background: url('./imgs/winterflorest.jpg');
+    background-image: url('./imgs/winterflorest.jpg');
     background-size: cover;
     height: 100vh;
     width: 100vw;
@@ -75,8 +75,11 @@ fieldset{
 }
 
 input:focus{ /*Efeito na linha*/
-    border-bottom: 2px solid #26a96a;
+    border-bottom: 2px solid rgb(38, 169, 106);
     box-shadow: 0 1px 0 0 #26a96a;
+    
+    color: purple;
+    font-weight: 600;
 }
 
 input:focus + label{ /* Efeito de subida no LABEL */
@@ -94,4 +97,39 @@ input:not(:placeholder-shown) { /* Paramanter o input ativo QUANDO preenchido */
 
 input::placeholder {
     color: transparent;
+}
+
+button{
+    padding: 15px 50px;
+    margin: 20px 140px;
+     
+    font-size: 17px;
+    font-weight: 600;
+    color:black;
+    background: transparent;
+    text-transform: uppercase;
+    
+    border: 2px solid #fff;
+    border-radius: 16px;
+
+    cursor: pointer;
+
+    transition: ease-in-out .25s;
+}
+
+button:hover{
+    color: aliceblue;
+    background-color: rgba(36, 169 ,106, 0.5);
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+
+    transition: ease-in-out .25s;
+}
+
+a:hover{
+    color: #26a96a;   
+    font-weight: 600;
 }
