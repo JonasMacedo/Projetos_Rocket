@@ -41,6 +41,27 @@ header h2{
     margin-left: 2.5rem;
 }
 
+.navegador a::after{ /* Criando um pseudo elemento */
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    
+    background: #fff;
+    border-radius: 3px;
+
+    left: 0;
+    bottom: -6px;
+
+    transform: scaleX(0);/* Ocultando o elemento */
+    transition: ease-in-out .25s; /* Suavizando o efeito de transicao */
+    transform-origin: left;
+}
+
+.navegador a:hover::after{ /* Apresentando o elemento */
+    transform: scaleX(1);
+}
+
 .btn_login{
     width: 130px;
     height: 50px;
