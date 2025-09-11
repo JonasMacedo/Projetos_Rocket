@@ -16,6 +16,22 @@
     font-size: 20px;
     font-weight: 600;
     cursor: pointer;
-    z-index: 1;
+    /* z-index: 1; */
 }
 
+.janela_modal{
+    width: 100vw;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, .5);
+
+    position: relative;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 300;/* Trazendo o conteudo a frente. */
+}
