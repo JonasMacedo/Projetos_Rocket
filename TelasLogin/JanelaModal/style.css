@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.btn_modal button{
+    display: inline;
+    position: absolute;
+    
+    top: 50%;
+    left: 50%;
+
+    background-color: #ff4c2c;
+    padding: 25px 60px;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    z-index: 1;
+}
+
