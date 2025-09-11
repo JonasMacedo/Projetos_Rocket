@@ -35,3 +35,16 @@
 
     z-index: 300;/* Trazendo o conteudo a frente. */
 }
+
+.content_modal{
+    width: 80%;
+    min-width: 450px;
+    min-height: 200px;
+    
+    /* Add efeito de vidro embaçado. */
+    background-color: #ffffffa0;
+    backdrop-filter: blur(10px);
+
+    padding: 50px;
+    border-radius: 20px;
+}
