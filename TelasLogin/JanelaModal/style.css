@@ -24,16 +24,20 @@
     height: 100vh;
 
     background: rgba(0, 0, 0, .5);
-
+    
     position: relative;
     top: 0;
     left: 0;
-
-    display: flex;
+    
+    display: none;/* Removendo a visibilidade do modal.  */
     align-items: center;
     justify-content: center;
-
+    
     z-index: 300;/* Trazendo o conteudo a frente. */
+}
+
+.janela_modal.abrir_modal{
+    display: flex;
 }
 
 .content_modal{
