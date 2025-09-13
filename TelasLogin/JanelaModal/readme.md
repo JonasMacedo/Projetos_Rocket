@@ -21,4 +21,33 @@ Para fechar a janela do modal bastará clicar fora do modal ou no botao de fecha
 <img src='./imgs/img02.png'>
 No caso clicando na area marcada de roxo o modal permanecerá aberto, já clicando fora ou no `X` ou nas areas indicadas pela seta vermelha irá fechar o modal.
 
-<h2> A nivel de codigo JavaScript</h2>
+# A nivel de codigo JavaScript
+No codigo JS primeiramente será preciso selecionar o elemento que envovel todo o modal, que no caso é a constante `MODAL`.
+
+> const modal = document.getElementById('janela_modal')
+
+Em seguida deverá ativar o estilo CSS para que o usuario possa ver o modal.
+>    modal.classList.add('abrir_modal')
+
+E por ultimo devera ser feita a verificação se foi clicado para fechar o modal. E remove a classe de estilo do CSS.
+> modal.addEventListener('click', (e)=>{ 
+>
+> if(e.target.id == 'fechar' || e.target.id == 'janela_modal'){
+>           modal.classList.remove('abrir_modal')
+>        }
+>
+>}
+
+O codigo completo ficará desta forma:
+
+    function ativaModal(){
+        const modal = document.getElementById('janela_modal')
+        modal.classList.add('abrir_modal')
+    
+        modal.addEventListener('click', (e)=>{ 
+                        
+            if(e.target.id == 'fechar' || e.target.id == 'janela_modal'){
+                modal.classList.remove('abrir_modal')
+            }
+        })
+    }
