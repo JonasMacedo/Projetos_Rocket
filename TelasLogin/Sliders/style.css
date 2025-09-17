@@ -12,3 +12,22 @@ body{
     font-size: 12px;
 }
 
+header{
+    width: 80%;
+    height: 50px;
+    
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: auto;
+    z-index: 2;
+}
+
+header a {
+    text-decoration: none;
+    color: #eee;
+
+    margin-right: 40px;
+
+    font-weight: 300;
+}
