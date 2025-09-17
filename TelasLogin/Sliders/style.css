@@ -77,3 +77,41 @@ header a {
     line-height: 1.5rem; 
 }
 
+.main_container .buttons{
+    display: grid;
+    grid-template-columns: repeat(2, 8.12rem);
+    grid-template-rows: 50px;
+    
+    gap: 0.3rem;
+    margin-top: 1.2rem;
+}
+
+.main_container .buttons button{
+    border: none;
+    background-color: #eee;
+    
+    letter-spacing: 3px;
+    font-weight: 500;
+    
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.main_container .buttons button:hover{
+    background-color: transparent;
+    border: 1px solid #eee;
+    color: #eee;
+    transition: 0.7s;
+}
+
+.main_container .buttons button:nth-child(2){ /* Selecionando o segundo button. */
+    background-color: transparent;
+    border: 1px solid #eee;
+    color: #eee;
+}
+
+.main_container .buttons button:nth-child(2):hover{ 
+    background-color: #eee;
+    color: #000;        
+    transition: 0.7s;
+}
