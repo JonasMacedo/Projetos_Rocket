@@ -31,3 +31,24 @@ header a {
 
     font-weight: 300;
 }
+
+.main_container{
+    height: 100vh;
+    width: 100vw;
+    margin-top: -50px; /* Para forcar o container a cobrir o header */
+
+    overflow: hidden; /* Para remover o efeito de rolagem do scroll.  */
+}
+
+.main_container .list_item{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.main_container .list_item img{
+    object-fit: cover; /* Para que a imagem seja redimencionado para o tamanho do container.  */
+    width: 100%;
+    height: 100%;
+    filter: brightness(50%); /* Removendo parte do brilho da imagem. */
+}
