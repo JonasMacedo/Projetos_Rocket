@@ -58,9 +58,22 @@ header a {
     top: 20%;
     right: 10%;
 
-    padding: 30%;
+    padding-right: 30%;
     width: 80%;
     color: #eee;
-
+    
     text-shadow: 0 5px 10px #000;
 }
+
+.main_container .title{
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.3rem;
+}
+
+.main_container .description{
+    font-size: 1.5rem;
+    margin-top: 1.2rem;
+    line-height: 1.5rem; 
+}
+
