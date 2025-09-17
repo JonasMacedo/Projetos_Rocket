@@ -52,3 +52,15 @@ header a {
     height: 100%;
     filter: brightness(50%); /* Removendo parte do brilho da imagem. */
 }
+
+.main_container .list_item .content{
+    position: absolute;
+    top: 20%;
+    right: 10%;
+
+    padding: 30%;
+    width: 80%;
+    color: #eee;
+
+    text-shadow: 0 5px 10px #000;
+}
