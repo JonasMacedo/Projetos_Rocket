@@ -146,3 +146,35 @@ header a {
     bottom: 10px;
     left: 10px;
 }
+
+.main_container .direcionais{
+    display: flex;
+    align-items: center;
+
+    position: absolute;
+    bottom: 120px;
+    left: 120px;
+    width: 300px;
+    gap: 10px;
+
+}
+
+.direcionais button{
+    border-radius: 10px;
+    border: none;
+    padding: 12px 17px;
+    
+    background-color: #eee4;
+    color: #eee;
+    cursor: pointer;
+
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.direcionais button:hover{
+    background-color: #eee;
+    color: #000;
+    transition: 0.7s;
+}
+
