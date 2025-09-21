@@ -184,8 +184,19 @@ header a {
     animation: effectNextCard 0.5s linear 1 forwards;
 }
 
-@keyframes effectNextCard{
+@keyframes effectNextCard {
     from{
         transform: translateX(150px);
+    }
+}
+
+.main_container.next .cards .cards:nth-last-child(1){
+    animation: effectUltimoCard 0.5s linear 1 forwards;
+}
+
+@keyframes effectUltimoCard {
+    from{
+        width: 0;
+        opacity: 0;
     }
 }
