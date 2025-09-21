@@ -23,11 +23,22 @@ function movimentaCard(type) {
         cards.appendChild(list_card[0])
         /* o appendChild usado para adicionar um elemento dentro de outro na estrutura de uma página (o DOM).
         o elemnto adicionado pelo appendChild SEMPRE sera adicionado ao final do conteudo já existente. */
+
+        container.classList.add('next')
+        
     }else{
         list.prepend(list_item[list_item.length -1])
         cards.prepend(list_card[list_card.length -1])
         // O metodo prepend é parecido com o appendChild, mas em vez de colocar o conteúdo no final de um elemento, ele coloca no começo.
+        
+        container.classList.add('back')
     }
+    
+    setTimeout(() => {
+        container.classList.remove('next')
+        container.classList.remove('back')
+        
+    }, 2750);
 
 }
 
