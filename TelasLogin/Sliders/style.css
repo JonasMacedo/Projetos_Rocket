@@ -178,3 +178,14 @@ header a {
     transition: 0.7s;
 }
 
+/* Animacao dos cards. */
+
+.main_container.next .cards{
+    animation: effectNextCard 0.5s linear 1 forwards;
+}
+
+@keyframes effectNextCard{
+    from{
+        transform: translateX(150px);
+    }
+}
