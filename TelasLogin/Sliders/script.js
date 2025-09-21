@@ -38,7 +38,7 @@ function movimentaCard(type) {
         container.classList.remove('next')
         container.classList.remove('back')
         
-    }, 2750);
+    }, 500);
 
 }
 
