@@ -209,10 +209,10 @@ header a {
     transform: translateY(50px);
     filter: blur(20px);
     opacity: 0;
-    animation: showContent 0.5s 1s linear 1 forwards;
+    animation: showContentNext 0.5s 1s linear 1 forwards;
 }
 
-@keyframes showContent {
+@keyframes showContentNext {
     to{
         transform: translateY(0);
         filter: blur(0);
@@ -220,9 +220,16 @@ header a {
     }   
 }
 
-/* 
-.list_section .listitem 
-.list_section .listitem 
-.list_section .listitem  
+/* Efeitos individuais nas animacoes. */
 
-*/
+.main_container .list_section .listitem  .content, .title{
+    animation-delay: 1.0s;
+}
+
+.main_container .list_section .listitem  .content, .description{
+    animation-delay: 1.6s;
+}
+
+.main_container .list_section .listitem  .content, .buttons{ 
+    animation-delay: 2.1s;
+}
