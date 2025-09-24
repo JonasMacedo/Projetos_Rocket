@@ -200,3 +200,29 @@ header a {
         opacity: 0;
     }
 }
+
+/* Animacao informaçoes. */
+
+.main_container .list_section .listitem  .content, .title, 
+.main_container .list_section .listitem  .content, .description,
+.main_container .list_section .listitem  .content, .buttons{ 
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent 0.5s 1s linear 1 forwards;
+}
+
+@keyframes showContent {
+    to{
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }   
+}
+
+/* 
+.list_section .listitem 
+.list_section .listitem 
+.list_section .listitem  
+
+*/
