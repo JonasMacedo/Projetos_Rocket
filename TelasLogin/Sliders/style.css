@@ -203,9 +203,9 @@ header a {
 
 /* Animacao informaçoes. */
 
-.main_container .list_section .listitem  .content, .title, 
-.main_container .list_section .listitem  .content, .description,
-.main_container .list_section .listitem  .content, .buttons{ 
+.main_container .list_section .list_item:nth-last-child(1)  .content, .title, 
+.main_container .list_section .list_item:nth-last-child(1)  .content, .description,
+.main_container .list_section .list_item:nth-last-child(1)  .content, .buttons{ 
     transform: translateY(50px);
     filter: blur(20px);
     opacity: 0;
@@ -222,14 +222,38 @@ header a {
 
 /* Efeitos individuais nas animacoes. */
 
-.main_container .list_section .listitem  .content, .title{
+.main_container .list_section .list_item:nth-last-child(1) .content, .title{
     animation-delay: 1.0s;
 }
 
-.main_container .list_section .listitem  .content, .description{
+.main_container .list_section .list_item:nth-last-child(1) .content, .description{
     animation-delay: 1.6s;
 }
 
-.main_container .list_section .listitem  .content, .buttons{ 
+.main_container .list_section .list_item:nth-last-child(1) .content, .buttons{ 
     animation-delay: 2.1s;
 }
+
+
+.main_container.next .list_section .list_item:nth-last-child(1) img{
+    width: 150px;
+    height: 220px;
+    
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    border-radius: 30px;
+    animation: showImage 0.5s linear 1 forwards;
+}
+
+@keyframes showImage {
+    to{
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+        
+        
