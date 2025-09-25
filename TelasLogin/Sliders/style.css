@@ -234,7 +234,6 @@ header a {
     animation-delay: 2.1s;
 }
 
-
 .main_container.next .list_section .list_item:nth-last-child(1) img{
     width: 150px;
     height: 220px;
@@ -255,5 +254,24 @@ header a {
         border-radius: 0;
     }
 }
-        
-        
+
+/* Efeito de retorno da imagem ao card. */
+
+.main_container.back .list_section .list_item:nth-last-child(1) img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: hideImage 0.5s linear 1 forwards;
+}
+
+@keyframes hideImage {
+    to{
+      width: 135px;  
+      height: 200px;
+      border-radius: 10px;
+
+      left: 35%;
+      bottom: 30px;
+    }   
+} 
+
