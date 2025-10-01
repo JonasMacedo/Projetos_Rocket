@@ -7,4 +7,12 @@ Em que será utilizado:
 - JavaScript
 
 O resultado final desta tela será:
-<img src='#'>
+<img src='./imgs/Img05.png'>
+
+# Efeitos
+Ao clicar na seta direcional, os cards serao movidas conforme o sentido ao qual foi clicado(frente/trás).
+<img src='./imgs/Img06.png'>
+
+Ao clicar na seta direcional ***> para frente***, o os cards irão se mover no sentido da seta, neste caso sairemos do card de *Veneza* e para o de *Bali*.
+E tambem será espandida sua imagem, e um efeito de animação em seu conteudo de testo.
+<img src='./imgs/Img07.png'>
