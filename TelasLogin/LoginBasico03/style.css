@@ -28,6 +28,12 @@ header{
     */
 }
 
+.logo{
+    display: flex;
+    gap: 0.9rem;
+    align-items: center;
+}
+
 .logo h2{
     font-size: 2rem;
     color: #fff; 
@@ -36,13 +42,12 @@ header{
 
 .navegador a{
     position: relative;
-    /* justify-content: space-evenly; */
     
     color: #fff;
     font-size: 1.1rem;
     text-decoration: none;
     font-weight: bold;
-    margin-left: 2.5rem;
+    margin-left: 1.5rem;
 }
 
 .navegador a::after{ /* Criando um pseudo elemento */
@@ -70,6 +75,7 @@ header{
  display: flex;
  align-items: center;
  gap: 0.9rem;
+ margin-right: 0.9rem;
 }
 
 .user_options input{
@@ -98,4 +104,21 @@ header{
 .btn_login:hover{
     background: darkgray;
 }
- 
+
+/* Responsividade do Header */
+
+@media(max-width: 1024px){
+    header{
+        flex-direction: column;
+        gap: 0.9rem;
+        padding: 1.8rem;
+    }
+    .logo{
+        display: flex;
+        gap: 15px;
+        margin-bottom: 0;
+    }
+    .navegador a{
+        margin-left: 0.9rem;
+    }
+}
