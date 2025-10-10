@@ -28,7 +28,7 @@ header{
     */
 }
 
-header h2{
+.logo h2{
     font-size: 2rem;
     color: #fff; 
     user-select: none;
@@ -36,11 +36,12 @@ header h2{
 
 .navegador a{
     position: relative;
-    font-size: 1.1rem;
+    /* justify-content: space-evenly; */
+    
     color: #fff;
+    font-size: 1.1rem;
     text-decoration: none;
-    font-weight: 500;
-    justify-content: space-evenly;
+    font-weight: bold;
     margin-left: 2.5rem;
 }
 
@@ -50,7 +51,7 @@ header h2{
     width: 100%;
     height: 3px;
     
-    background: #fff;
+    background: grey;
     border-radius: 3px;
 
     left: 0;
@@ -63,6 +64,18 @@ header h2{
 
 .navegador a:hover::after{ /* Apresentando o elemento */
     transform: scaleX(1);
+}
+
+.user_options{
+ display: flex;
+ align-items: center;
+ gap: 0.9rem;
+}
+
+.user_options input{
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ffa500;
 }
 
 .btn_login{
