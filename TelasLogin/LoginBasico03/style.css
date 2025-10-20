@@ -136,6 +136,22 @@ header{
 
 .product_gallery img{
     width: 100%;
+    border-radius: 10px;
+}
+.gallery_imgs{
+    display: flex;
+    gap: 7px;
+    margin-top: 10px;
+}
+.gallery_imgs img{
+    width: 110px;
+    cursor: pointer;
+    border: 2px solid transparent; /* Pare evitar o efeito de frek */
+    transition: 0.3s;
+}
+.gallery_imgs img:hover{ 
+    border: 4px solid #ffa500; 
+    
 }
 
 .product_info{
