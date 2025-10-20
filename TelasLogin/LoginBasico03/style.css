@@ -122,3 +122,27 @@ header{
         margin-left: 0.9rem;
     }
 }
+
+.product_details{
+    max-width: 1200px;
+    display: flex;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.product_gallery{
+    flex: 1;
+}
+
+.product_gallery img{
+    width: 100%;
+}
+
+.product_info{
+    flex: 1;
+}
+
+.product_info{
+    margin: 12px;
+    padding: 12px;
+}
