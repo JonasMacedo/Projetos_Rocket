@@ -48,6 +48,22 @@ public class UserController : ControllerBase
         return Ok(response);
     }
 
+    [HttpGet("getListUsers")]
+    [ProducesResponseType(typeof(List<ResponseRegisterUserJson>), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    public IActionResult GetListUsers(){
+        //Sera retornado uma lista(array) de usuarios
+        return Ok();
+    }
+
+    [HttpGet("getListJson")]
+    [ProducesResponseType(typeof(ResponseListRegisterJson), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    public IActionResult GetListJson(){
+        //Sera retornado uma lista de JSON.
+        return Ok();
+    }
+
     [HttpPost]
     [ProducesResponseType( typeof(ResponseRegisterUserJson), StatusCodes.Status201Created)] 
     public IActionResult Create([FromBody]RequestRegisterUserJson request) {
