@@ -174,5 +174,55 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "CrudSimplesC.Controllers.UserController",
+    "Method": "GetListJson",
+    "RelativePath": "api/user/getlistjson",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "CrudSimplesC.Communication.Response.ResponseListRegisterJson",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      }
+    ]
+  },
+  {
+    "ContainingType": "CrudSimplesC.Controllers.UserController",
+    "Method": "GetListUsers",
+    "RelativePath": "api/user/getlistusers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[CrudSimplesC.Communication.Response.ResponseRegisterUserJson, CrudSimplesC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      }
+    ]
   }
 ]

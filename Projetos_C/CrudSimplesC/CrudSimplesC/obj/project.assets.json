@@ -453,11 +453,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jonas.Carvalho\\Desktop\\Pessoal\\Reviews\\Laboratorio\\C#\\CrudSimplesC\\CrudSimplesC\\CrudSimplesC.csproj",
+      "projectUniqueName": "C:\\Users\\Jonas.Carvalho\\Desktop\\Pessoal\\Reviews\\Rocket\\Projetos_C\\CrudSimplesC\\CrudSimplesC\\CrudSimplesC.csproj",
       "projectName": "CrudSimplesC",
-      "projectPath": "C:\\Users\\Jonas.Carvalho\\Desktop\\Pessoal\\Reviews\\Laboratorio\\C#\\CrudSimplesC\\CrudSimplesC\\CrudSimplesC.csproj",
+      "projectPath": "C:\\Users\\Jonas.Carvalho\\Desktop\\Pessoal\\Reviews\\Rocket\\Projetos_C\\CrudSimplesC\\CrudSimplesC\\CrudSimplesC.csproj",
       "packagesPath": "C:\\Users\\Jonas.Carvalho\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jonas.Carvalho\\Desktop\\Pessoal\\Reviews\\Laboratorio\\C#\\CrudSimplesC\\CrudSimplesC\\obj\\",
+      "outputPath": "C:\\Users\\Jonas.Carvalho\\Desktop\\Pessoal\\Reviews\\Rocket\\Projetos_C\\CrudSimplesC\\CrudSimplesC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
