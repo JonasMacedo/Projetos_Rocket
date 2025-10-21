@@ -40,4 +40,4 @@ O codigo foi alterado para que seja retornado uma lista de Objeto.
 >>        return Ok();
 >>    }
 >
-<img src='../Imgs/img02.png'>
+<img src='../Imgs/Img02.png'>
