@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Runtime.Intrinsics.X86;
 
 namespace CrudSimplesC.Controllers;
 [Route("api/[controller]")]
