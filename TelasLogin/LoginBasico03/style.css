@@ -192,5 +192,20 @@ header{
     margin-bottom: 13px;
 }
 
+.product_options label{
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
 
+#color, #quantity{
+    width: 100%;
+}
 
+.product_options select, .product_options input{
+    padding: 10px;
+    color:#ffa500;
+    margin-top: 5px;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
