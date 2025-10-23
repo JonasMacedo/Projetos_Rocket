@@ -193,6 +193,7 @@ header{
 }
 
 .product_options label{
+    color: #fff;
     font-weight: bold;
     display: block;
     margin-top: 10px;
@@ -208,4 +209,49 @@ header{
     margin-top: 5px;
     border: 1px solid #333;
     border-radius: 5px;
+    font-weight: bold;
+}
+
+.buttons{
+    display: flex;
+    gap: 15px;
+}
+
+.cart, .wish_list{
+    font-weight: bold;
+    margin: 0.9rem 0 0.9rem 0;
+    padding: 15px 30px;
+    background-color: #1e1e1e;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.cart:hover{
+    color: #81c784;
+}
+
+.wish_list{
+    border: 2px solid #ffa500;
+    color: #ffa500;
+}
+
+.wish_list:hover {
+    border: 3px solid #ffa500;
+    background-color: #1e1e1e;
+    color: #c70404;
+}
+
+.delivery{
+    margin-top: 20px;
+    color: #777;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.delivery:hover{
+    font-size: 16px;
+    color: #ffa500;
 }
