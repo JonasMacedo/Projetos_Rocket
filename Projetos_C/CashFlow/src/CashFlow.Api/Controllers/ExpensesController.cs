@@ -28,8 +28,9 @@ public class ExpensesController : ControllerBase
         {
             //Ira capturar apenas os Arguments Exceptions, para tratamento.
 
-            var errorResponse = new ResponseErrorJson();
-            errorResponse.ErrorMessage=ex.Message;
+            var errorResponse = new ResponseErrorJson{
+                ErrorMessage = ex.Message
+            };
 
             return BadRequest(errorResponse);
 
