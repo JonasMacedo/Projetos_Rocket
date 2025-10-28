@@ -28,9 +28,7 @@ public class ExpensesController : ControllerBase
         {
             //Ira capturar apenas os Arguments Exceptions, para tratamento.
 
-            var errorResponse = new ResponseErrorJson{
-                ErrorMessage = ex.Message
-            };
+            var errorResponse = new ResponseErrorJson(ex.Message);
 
             return BadRequest(errorResponse);
 
@@ -38,9 +36,8 @@ public class ExpensesController : ControllerBase
             //catch (DivideByZeroException div) {// Pode ter varios Catch para diferentes tipos de excescao.
 
             // Para tratar erros desconhecidos.
-            var errorResponse = new ResponseErrorJson{
-                //Forma otimizada do catch acima.
-                ErrorMessage = "Unknown Error"
+            var errorResponse = new ResponseErrorJson("Unknown Error");
+                
             };
             return StatusCode(StatusCodes.Status500InternalServerError, errorResponse);
 
