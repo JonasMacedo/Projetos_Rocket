@@ -1,5 +1,6 @@
 ﻿using CashFlow.Application.UseCases.Expenses.Register;
 using CashFlow.Comunnication.Request;
+using CashFlow.Comunnication.Response;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CashFlow.Api.Controllers;
@@ -27,13 +28,20 @@ public class ExpensesController : ControllerBase
         {
             //Ira capturar apenas os Arguments Exceptions, para tratamento.
 
-            return BadRequest(ex.Message);
+            var errorResponse = new ResponseErrorJson();
+            errorResponse.ErrorMessage=ex.Message;
+
+            return BadRequest(errorResponse);
 
         }catch{
             //catch (DivideByZeroException div) {// Pode ter varios Catch para diferentes tipos de excescao.
 
             // Para tratar erros desconhecidos.
-            return StatusCode(StatusCodes.Status500InternalServerError, "Unknown Error");
+            var errorResponse = new ResponseErrorJson{
+                //Forma otimizada do catch acima.
+                ErrorMessage = "Unknown Error"
+            };
+            return StatusCode(StatusCodes.Status500InternalServerError, errorResponse);
 
         }
 
