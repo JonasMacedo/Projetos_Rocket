@@ -14,7 +14,16 @@ public class RegisterExpenseUseCase
     }
 
     private void Validate(RequestExpenseJson request) {
-    
+
+        var validator = new RegisterExpenseValidator();
+        var result = validator.Validate(request);
+
+        if (result.IsValid == false) {
+            var errorMessages =result.Errors.Select(f => f.ErrorMessage).ToList();
+        }
+
+        /* Validacao sem usar a dependencia do NuGet FluentValidator.
+         
         var titleIsEmpty = string.IsNullOrWhiteSpace(request.Title);// Sera TRUE se a variavel for nula ou vazia. 
         
         if (titleIsEmpty) {
@@ -42,6 +51,7 @@ public class RegisterExpenseUseCase
 
             throw new ArgumentException("Payment Type is not valid.");
         }
+        */
 
     }
 }
