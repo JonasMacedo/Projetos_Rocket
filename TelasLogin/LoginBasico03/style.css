@@ -255,3 +255,33 @@ header{
     font-size: 16px;
     color: #ffa500;
 }
+
+.product-specs{
+    margin: 20px;
+    color: #fff;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.tabs{
+    display: flex;
+    gap: 30px;
+    list-style-type: none;
+    border-bottom: 2px solid #333;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.tabs li{
+    font-weight: bold;
+    cursor: pointer;
+    color: #777;
+}
+
+.specs-content p{
+    font-size: 1rem;
+    color: #b0b0b0;
+    margin: 10px 0;
+
+}
