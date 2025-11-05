@@ -1,6 +1,7 @@
 ﻿using CashFlow.Comunnication.Enums;
 using CashFlow.Comunnication.Request;
 using CashFlow.Comunnication.Response;
+using CashFlow.Exception.ExceptionsBase;
 
 namespace CashFlow.Application.UseCases.Expenses.Register;
 public class RegisterExpenseUseCase
@@ -19,7 +20,9 @@ public class RegisterExpenseUseCase
         var result = validator.Validate(request);
 
         if (result.IsValid == false) {
-            var errorMessages =result.Errors.Select(f => f.ErrorMessage).ToList();
+            var errorMessages = result.Errors.Select(f => f.ErrorMessage).ToList();
+
+            throw new ErrorOnValidationException(errorMessages);
         }
 
         /* Validacao sem usar a dependencia do NuGet FluentValidator.
