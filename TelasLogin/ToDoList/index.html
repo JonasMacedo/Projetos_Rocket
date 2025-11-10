@@ -18,7 +18,9 @@
 
     <script>
 
-        var ulElement = document.querySelector('ul')
+        var ulElement = document.querySelector('ul');
+        var inputElement = document.querySelector('input');
+
         console.log(ulElement)
 
         var itensToDo = JSON.parse(localStorage.getItem('list_todo')) || [];
@@ -41,12 +43,12 @@
 
                 // Localizando a posicao do item na lista de ToDos.
                 var positionItem = itens.indexOf(itens);
-                linkItem.SetAttribute('onclick', 'deleteItem('+positionItem+')');
+                linkItem.setAttribute('onclick', 'deleteItem('+positionItem+')');
 
-                newLi.appendChild(CreateText);
+                newLi.appendChild(createText);
                 newLi.appendChild(linkItem)
 
-                ulElement.appendCuild(newLi);
+                ulElement.appendChild(newLi);
 
             }
 
@@ -55,7 +57,13 @@
 
         var buttonElement = document.querySelector('button');
         buttonElement.onclick = function addTodo(){
-          console.log('clicado');
+          
+            console.log('clicado');
+
+            var todoText = inputElement.value;  // Recuperando o valor informado no input
+
+            itensToDo.push(todoText);
+            showItens();
         }
 
 
