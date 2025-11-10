@@ -17,10 +17,41 @@
     </div>
 
     <script>
+
         var ulElement = document.querySelector('ul')
         console.log(ulElement)
 
         var itensToDo = JSON.parse(localStorage.getItem('list_todo')) || [];
+
+        function showItens(){
+            
+            ulElement.innerHTML = ''; // Limpa a tela antes de apresentar o conteudo.
+        
+            for(itens of itensToDo){
+               
+                // Criando elementos da lista de ToDo.
+                var newLi = document.createElement('li');
+                var createText = document.createTextNode(itens);
+
+                // Add botao de remocao de Todo.
+                var linkItem = document.createElement('a');
+                var linkLabel = document.createTextNode('Excluir');
+                linkItem.setAttribute('href' , '#');
+                linkItem.appendChild(linkLabel);
+
+                // Localizando a posicao do item na lista de ToDos.
+                var positionItem = itens.indexOf(itens);
+                linkItem.SetAttribute('onclick', 'deleteItem('+positionItem+')');
+
+                newLi.appendChild(CreateText);
+                newLi.appendChild(linkItem)
+
+                ulElement.appendCuild(newLi);
+
+            }
+
+        }
+
 
         var buttonElement = document.querySelector('button');
         buttonElement.onclick = function addTodo(){
