@@ -1,6 +1,11 @@
 ## Informacoes.
 
-O biblioteca de Excepetion, será responsavel por conter as excesoes e localizar mensagens de erro.
+O biblioteca de Excepetion, será responsavel por conter a ***estrutura*** das 
+excecoes.
+
+Enquanto na classe de API ou qualquer outra classe, precisara criar uma 
+bibliteca de ***Filters(Filtros)*** onde sera implmentado o codigo onde 
+fato tera as validacoes.
 
 Criar exceções personalizadas é importante, para ter mais controle sobre os parâmetros e evitar problemas de segurança.
 
@@ -19,6 +24,7 @@ Sendo assim as demais classes criadas iram ser filhas da classe de excessao pai,
 >		public class ***ErrorOnValidationException*** : **CashFlowException**
 
 Nas classes filhas eh muito util a criacao de metodos construtores.
+
 Assim como classes que forem relacionadas como Controllers, Comunnication e Etc; precisam ser ajustados conforme a necessidade.
 
 
