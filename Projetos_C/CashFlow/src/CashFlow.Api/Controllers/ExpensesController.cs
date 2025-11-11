@@ -1,7 +1,5 @@
 ﻿using CashFlow.Application.UseCases.Expenses.Register;
 using CashFlow.Comunnication.Request;
-using CashFlow.Comunnication.Response;
-using CashFlow.Exception.ExceptionsBase;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CashFlow.Api.Controllers;
@@ -13,8 +11,13 @@ public class ExpensesController : ControllerBase
     [HttpPost]
     public IActionResult Register([FromBody] RequestExpenseJson request)
     {
+        var useCase = new RegisterExpenseUseCase();
+        var response = useCase.Execute(request);
 
-        try
+        return Created(string.Empty, response);
+
+
+       /* try
         {
 
             //Verifica se ha falhas com TryCatch, se houver excescao.
@@ -25,7 +28,7 @@ public class ExpensesController : ControllerBase
             return Created(String.Empty, response);
 
         }
-        catch (ErrorOnValidationException ex)
+        catch (ErrorOnValidationException ex) // Chamando a nossa classe de filtro de excecoes.
         {
             //Ira capturar apenas os Arguments Exceptions, para tratamento.
 
@@ -41,6 +44,6 @@ public class ExpensesController : ControllerBase
                 
             return StatusCode(StatusCodes.Status500InternalServerError, errorResponse);
         }
-
+       */
     }
 }
