@@ -33,7 +33,7 @@
                
                 // Criando elementos da lista de ToDo.
                 var newLi = document.createElement('li');
-                var createText = document.createTextNode(itens);
+                var newText = document.createTextNode(itens);
 
                 // Add botao de remocao de Todo.
                 var linkItem = document.createElement('a');
@@ -45,7 +45,7 @@
                 var positionItem = itens.indexOf(itens);
                 linkItem.setAttribute('onclick', 'deleteItem('+positionItem+')');
 
-                newLi.appendChild(createText);
+                newLi.appendChild(newText);
                 newLi.appendChild(linkItem)
 
                 ulElement.appendChild(newLi);
