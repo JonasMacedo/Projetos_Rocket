@@ -50,11 +50,3 @@ h1, h2, h3{
     margin-inline: auto;
 }
 
-/* Estilos utilitarios */
-.grid{
-    display: grid;
-}
-
-.grid-flow-col{
-    grid-auto-flow: column;
-}
