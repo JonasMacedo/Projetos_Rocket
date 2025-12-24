@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root{
     --font-family:"Poltawski Nowy", serif;
    
@@ -22,3 +28,9 @@
     --brand-dark: #ea3a12;
     
 }
+
+body{
+    height: 100vh;
+    overflow: hidden;
+}
+
