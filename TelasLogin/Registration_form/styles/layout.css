@@ -4,3 +4,23 @@
 
     height: 100vh;
 }
+
+.section_main{
+    overflow: auto;
+    padding: 4rem;
+
+    & .section_main{
+        max-width: 33rem;
+        margin-left: auto;
+    }
+
+}
+
+.aside_main{
+    background-color: var(--surface-secundary);
+    padding: 4rem;
+
+    & .aside_container{
+        max-width: 31rem;
+    }
+}
